@@ -9,6 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
+    "rimble-utils": "MikeLockz/rimble-utils",
     "rimble-web3-components": "file:.."
   },
   "scripts": {

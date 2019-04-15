@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import ExampleComponent from 'rimble-web3-components'
+import { ConnectionBanner } from "rimble-web3-components";
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <ConnectionBanner requiredNetwork={3} curerentNetwork={4} />
       </div>
-    )
+    );
   }
 }

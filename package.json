@@ -29,8 +29,7 @@
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
     "rimble-ui": "^0.6.1",
-    "styled-components": ">= 4",
-    "rimble-utils": "ConsenSys/rimble-utils"
+    "styled-components": ">= 4"
   },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
@@ -55,7 +54,6 @@
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
     "rimble-ui": "^0.6.1",
-    "rimble-utils": "ConsenSys/rimble-utils",
     "rollup": "^0.64.1",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-commonjs": "^9.1.3",

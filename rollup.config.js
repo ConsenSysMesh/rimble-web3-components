@@ -12,11 +12,13 @@ export default {
   input: "src/index.js",
   output: [
     {
+      name: "rimble-web3-components",
       file: pkg.main,
       format: "cjs",
       sourcemap: true
     },
     {
+      name: "rimble-web3-components",
       file: pkg.module,
       format: "es",
       sourcemap: true

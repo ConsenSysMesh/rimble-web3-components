@@ -22,7 +22,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
-    "rimble-utils": "ConsenSys/rimble-utils"
+    "rimble-utils": "MikeLockz/rimble-utils"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",

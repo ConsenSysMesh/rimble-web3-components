@@ -130,4 +130,4 @@ class ConnectionBanner extends Component {
   }
 }
 
-export { ConnectionBanner };
+export default ConnectionBanner;

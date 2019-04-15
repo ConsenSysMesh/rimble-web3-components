@@ -9105,9 +9105,9 @@ rimble-ui@^0.6.1:
     rmdi "^1.0.1"
     styled-system "^4.1.0"
 
-rimble-utils@ConsenSys/rimble-utils:
-  version "0.0.2"
-  resolved "https://codeload.github.com/ConsenSys/rimble-utils/tar.gz/49b24dd27d74a9b70c22d2e76e69fcf449e6cd5a"
+rimble-utils@MikeLockz/rimble-utils:
+  version "0.0.1"
+  resolved "https://codeload.github.com/MikeLockz/rimble-utils/tar.gz/470649c5c84aa5476cd20a0361e6cbb2806982e0"
   dependencies:
     bowser "^2.2.0"
 

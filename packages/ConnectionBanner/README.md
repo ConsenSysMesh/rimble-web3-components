@@ -1,6 +1,6 @@
 # @rimble/connection-banner
 
-Web3 React components built with Rimble UI
+Web3 React component built with Rimble UI that will display an informative banner when the user is not in a web3 capable browser, or when the current browser does not have a wallet available, or when the current ethereum network does not match the required network.
 
 ## Installation
 
@@ -16,4 +16,4 @@ yarn add @rimble/connection-banner
 
 ## Documentation
 
-[The documentation](https://consensys.github.io/rimble-ui/)
+[Documentation](https://consensys.github.io/rimble-ui/)

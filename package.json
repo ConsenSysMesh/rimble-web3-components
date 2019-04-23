@@ -1,0 +1,52 @@
+{
+  "name": "rimble-web3-components",
+  "version": "0.0.0-development",
+  "main": "index.js",
+  "author": "ConsenSys",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna exec -- rollup -c=../../rollup.config.js",
+    "watch": "lerna exec --no-sort -- rollup -w -c=../../rollup.config.js",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "check-packages": "yarn clean && yarn test && yarn lint && yarn build",
+    "precommit": "lint-staged"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-function-bind": "^7.2.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.7.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^1.3.1",
+    "jest": "^24.7.1",
+    "lerna": "^2.11.0",
+    "lerna-get-packages": "^1.0.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.17.0",
+    "react-test-renderer": "^16.8.6",
+    "regenerator-runtime": "^0.13.2",
+    "rollup": "^1.10.1",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3"
+  }
+}

@@ -97,6 +97,7 @@ Version and publish updated packages to NPM
 ### Misc
 
 To publish to a new package to NPM you must first manually create the package via the command line.
+
 `npm publish --access public`
 
 ### Issues
@@ -105,7 +106,7 @@ To publish to a new package to NPM you must first manually create the package vi
 
 ### Contributing
 
-We are open source and welcome your contributions!
+We are open source and welcome your [contributions](https://github.com/ConsenSys/rimble-web3-components/CONTRIBUTIONS.md) !
 
 ### License
 

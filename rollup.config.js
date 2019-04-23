@@ -23,7 +23,7 @@ const LOCAL_GLOBALS = {
   'prop-types': 'PropTypes',
   'rimble-ui': 'RimbleUi',
   'bowser': 'Bowser',
-  '@mikelockzrimble/utils': 'RimbleUtils'
+  '@rimble/utils': 'RimbleUtils'
 };
 
 const LOCAL_EXTERNALS = [
@@ -31,7 +31,7 @@ const LOCAL_EXTERNALS = [
   'react-dom',
   'prop-types',
   'rimble-ui',
-  '@mikelockzrimble/utils',
+  '@rimble/utils',
   'bowser'
 ];
 

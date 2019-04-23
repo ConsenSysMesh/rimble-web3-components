@@ -38,17 +38,11 @@ Commit changes to libraries
 
 `git commit -am “commit message”`
 
-Publish updated packages to NPM
+Version and publish updated packages to NPM
 
 `lerna publish`
 
-### For CI build environment
-
-Remove existing compiled packages, lint and test
-
-`lerna run check-packages`
-
-### Monorepo structure
+## Monorepo structure
 
 ```text
 ├── node_modules
@@ -86,6 +80,7 @@ Remove existing compiled packages, lint and test
 └── rollup.config.js
 ```
 
+### Monorepo organization
 - Yarn handles dependencies
   - Root package defines shared development tooling (lint, prettier, babel)
     - Default base config files for each tool exist in root

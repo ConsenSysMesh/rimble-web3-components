@@ -9,7 +9,5 @@ module.exports = async ({ config }) => {
     'styled-components',
   );
 
-  console.log(config.resolve);
-
   return config;
 };

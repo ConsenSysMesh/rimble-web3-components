@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ConnectionBanner from '@rimble/connection-banner';
+import { Text } from 'rimble-ui';
 
 storiesOf('ConnectionBanner', module)
   .add('wrong network - default', () => (
@@ -22,17 +23,17 @@ storiesOf('ConnectionBanner', module)
         {{
           notWeb3CapableBrowserMessage: (
             <div>
-              <p>Not a web3 capable browser</p>
+              <Text>Not a web3 capable browser</Text>
             </div>
           ),
           noNetworkAvailableMessage: (
             <div>
-              <p>No Ethereum network available</p>
+              <Text>No Ethereum network available</Text>
             </div>
           ),
           onWrongNetworkMessage: (
             <div>
-              <p>On wrong Ethereum network</p>
+              <Text>On wrong Ethereum network</Text>
             </div>
           ),
         }}
@@ -58,17 +59,17 @@ storiesOf('ConnectionBanner', module)
         {{
           notWeb3CapableBrowserMessage: (
             <div>
-              <p>Not a web3 capable browser</p>
+              <Text>Not a web3 capable browser</Text>
             </div>
           ),
           noNetworkAvailableMessage: (
             <div>
-              <p>No Ethereum network available</p>
+              <Text>No Ethereum network available</Text>
             </div>
           ),
           onWrongNetworkMessage: (
             <div>
-              <p>On wrong Ethereum network</p>
+              <Text>On wrong Ethereum network</Text>
             </div>
           ),
         }}

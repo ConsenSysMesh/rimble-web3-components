@@ -1,7 +1,7 @@
 Contributing to Rimble UI
 =========================================
 
- When contributing, please follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+ When contributing, please follow the [Code of Conduct](.github/CODE_OF_CONDUCT.md).
 
 Issues
 ------
@@ -28,7 +28,7 @@ MIT License
 
 Copyright (c) 2018-2019 ConsenSys
 
-[View the full license](./../LICENSE.txt)
+[View the full license](LICENSE.txt)
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

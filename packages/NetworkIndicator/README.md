@@ -1,5 +1,5 @@
 ![Rimble Network Indicator - current network](./_assets/network-indicator-current-network.png)
-![Rimble Network Indicator - wrong network](./_assets/network-indicator-current-network.png)
+![Rimble Network Indicator - wrong network](./_assets/network-indicator-wrong-network.png)
 
 # @rimble/network-indicator
 

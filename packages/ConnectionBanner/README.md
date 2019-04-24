@@ -18,21 +18,25 @@ npm install @rimble/connection-banner
 yarn add @rimble/connection-banner
 ```
 
-
 ## Usage Example
-```jsx
-import ConnectionBanner from "@rimble/connection-banner";
 
-<ConnectionBanner currentNetwork={3} requiredNetwork={1} onWeb3Fallback={true} />
+```jsx
+import ConnectionBanner from '@rimble/connection-banner';
+
+<ConnectionBanner
+  currentNetwork={3}
+  requiredNetwork={1}
+  onWeb3Fallback={true}
+/>;
 ```
 
 ## Props
-| Name    | Type   | Default | Description                                  |
-| ------- | ------ | ------- | -------------------------------------------- |
-| `currentNetwork`   | integer | none  | The network ID that the user is connected to, if available |
-| `requiredNetwork`  | integer | none   | The network ID that the dApp requires to function   |
-| `onWeb3Fallback`  | boolean | false   | Set to `true` when you connect to a smart contract via a provider like infura   |
 
+| Name              | Type    | Default | Description                                                                   |
+| ----------------- | ------- | ------- | ----------------------------------------------------------------------------- |
+| `currentNetwork`  | integer | none    | The network ID that the user is connected to, if available                    |
+| `requiredNetwork` | integer | none    | The network ID that the dApp requires to function                             |
+| `onWeb3Fallback`  | boolean | false   | Set to `true` when you connect to a smart contract via a provider like infura |
 
 ## Documentation
 

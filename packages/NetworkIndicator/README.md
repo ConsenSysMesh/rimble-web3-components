@@ -18,18 +18,19 @@ yarn add @rimble/network-indicator
 ```
 
 ## Usage Example
-```jsx
-import NetworkIndicator from "@rimble/network-indicator";
 
-<NetworkIndicator currentNetwork={3} requiredNetwork={1} />
+```jsx
+import NetworkIndicator from '@rimble/network-indicator';
+
+<NetworkIndicator currentNetwork={3} requiredNetwork={1} />;
 ```
 
 ## Props
-| Name    | Type   | Default | Description                                  |
-| ------- | ------ | ------- | -------------------------------------------- |
-| `currentNetwork`   | integer | none  | The network ID that the user is connected to, if available |
-| `requiredNetwork`  | integer | none   | The network ID that the dApp requires to function   |
 
+| Name              | Type    | Default | Description                                                |
+| ----------------- | ------- | ------- | ---------------------------------------------------------- |
+| `currentNetwork`  | integer | none    | The network ID that the user is connected to, if available |
+| `requiredNetwork` | integer | none    | The network ID that the dApp requires to function          |
 
 ## Documentation
 

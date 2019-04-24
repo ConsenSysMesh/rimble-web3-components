@@ -6,44 +6,44 @@ Rimble Utils is part of an array of tools to help web3 dApp developers launch pr
 
 Clone this repository and install its dependencies:
 
-```bash
-npm install rimble-utils --save
+```sh
+// with npm
+npm install @rimble/utils --save
+
+// with yarn
+yarn add @rimble/utils
 ```
+
+## Usage Example
 
 Import RimbleUtils library and call functions.
 
-```js
-import RimbleUtils from "rimble-utils";
+```jsx
+import RimbleUtils from '@rimble/utils';
 
-const canDoWeb3 = RimbleUtils.browserIsWeb3Compatible();
-const currentNetworkName = RimbleUtils.getEthNetworkNameById(4); // returns "Rinkeby"
+const canDoWeb3 = RimbleUtils.browserIsWeb3Compatible(); // returns true or false boolean
+const currentNetworkName = RimbleUtils.getEthNetworkNameById(4); // returns "Rinkeby" string
 ```
+
+## Methods of RimbleUtils
+
+| Name                  | Parameters          | Returns | Description                                                                                      |
+| --------------------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------ |
+| browserIsWeb3Capable  | none                | boolean | Examines brower's UserAgent and determines if browser is recent Chrome, FireFox, Brave, or Opera |
+| getEthNetworkNameById | Ethereum network ID | string  | Converts an Ethereum network ID into a network name                                              |
 
 ## Documentation
 
 [Documentation](https://consensys.github.io/rimble-ui/)
 
+### Issues
 
-## License
+[Open an issue](https://github.com/ConsenSys/rimble-web3-components/issues) for any bugs or feature requests
 
-MIT License
+### Contributing
 
-Copyright (c) 2018 ConsenSys, Inc.
+We are open source and welcome your [contributions](https://github.com/ConsenSys/rimble-web3-components/CONTRIBUTIONS.md) !
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+### License
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+MIT © [ConsenSys](https://github.com/ConsenSys)

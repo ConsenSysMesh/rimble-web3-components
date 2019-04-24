@@ -15,7 +15,6 @@ const WrongNetwork = ({
   requiredNetwork,
   onWrongNetworkMessage,
 }) => {
-  console.log('onWrongNetworkMessage', onWrongNetworkMessage);
   return (
     <div>
       {onWrongNetworkMessage === null ? (
@@ -109,9 +108,9 @@ class ConnectionBanner extends Component {
     requiredNetwork: PropTypes.number,
     onWeb3Fallback: PropTypes.bool,
     children: PropTypes.shape({
-      notWeb3CapableBrowser: PropTypes.node,
+      notWeb3CapableBrowserMessage: PropTypes.node,
       noNetworkAvailableMessage: PropTypes.node,
-      onWrongNetwork: PropTypes.node,
+      onWrongNetworkMessage: PropTypes.node,
     }),
   };
   static defaultProps = {
@@ -119,9 +118,9 @@ class ConnectionBanner extends Component {
     requiredNetwork: null,
     onWeb3Fallback: false,
     children: {
-      notWeb3CapableBrowser: null,
+      notWeb3CapableBrowserMessage: null,
       noNetworkAvailableMessage: null,
-      onWrongNetwork: null,
+      onWrongNetworkMessage: null,
     },
   };
 

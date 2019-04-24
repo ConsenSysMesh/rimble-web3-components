@@ -3,17 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rimble/connection-banner": "link:../packages/ConnectionBanner",
+    "@rimble/utils": "link:../packages/Utils",
     "react": "^16.8.6",
+    "react-app": "^1.1.2",
+    "react-app-rewire-aliases": "^0.2.0",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
-    "@rimble/utils": "link:../packages/Utils",
-    "@rimble/connection-banner": "link:../packages/ConnectionBanner"
+    "rewired": "^1.0.7",
+    "rimble-ui": "^0.6.1",
+    "styled-components": "^4.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -33,11 +38,11 @@
     ]
   },
   "devDependencies": {
-    "@storybook/react": "^5.0.10",
+    "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-links": "^5.0.10",
     "@storybook/addons": "^5.0.10",
-    "@babel/core": "^7.4.3",
+    "@storybook/react": "^5.0.10",
     "babel-loader": "^8.0.5"
   }
 }

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RimbleUtils from '@rimble/utils';
-import { Box, Flex, Icon, Text, MetaMaskButton } from 'rimble-ui';
+import { Box, Flex, Icon, Text, MetaMaskButton, Link } from 'rimble-ui';
 
 const bannerStyle = {
-  position: 'fixed',
-  bottom: 0,
-  left: 0,
-  right: 0,
-  width: '100%',
-  backgroundColor: 'white',
+  margin: '1em',
+  backgroundColor: '#fff',
+  border: '1px solid #ccc',
+  borderRadius: '3px',
 };
 
 const WrongNetwork = ({
@@ -20,7 +18,7 @@ const WrongNetwork = ({
   console.log('onWrongNetworkMessage', onWrongNetworkMessage);
   return (
     <div>
-      {typeof onWrongNetworkMessage === 'undefined' ? (
+      {onWrongNetworkMessage === null ? (
         // Show default banner
         <Box style={bannerStyle} p={3}>
           <Flex alignItems="center">
@@ -51,7 +49,7 @@ const WrongNetwork = ({
 const NoNetwork = ({ noNetworkAvailableMessage }) => {
   return (
     <div>
-      {typeof noNetworkAvailableMessage === 'undefined' ? (
+      {noNetworkAvailableMessage === null ? (
         <Box style={bannerStyle} p={3}>
           <Flex alignItems="center" justifyContent="space-between">
             <Flex alignItems="center">
@@ -67,7 +65,9 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
                 </Text>
               </Flex>
             </Flex>
-            <MetaMaskButton>Install MetaMask</MetaMaskButton>
+            <Link href="https://metamask.io/" target="_blank">
+              <MetaMaskButton>Install MetaMask</MetaMaskButton>
+            </Link>
           </Flex>
         </Box>
       ) : (
@@ -80,7 +80,7 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
 const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
   return (
     <div>
-      {typeof notWeb3CapableBrowserMessage === 'undefined' ? (
+      {notWeb3CapableBrowserMessage === null ? (
         <Box style={bannerStyle} p={3}>
           <Flex alignItems="center">
             <Box p={4}>
@@ -114,6 +114,16 @@ class ConnectionBanner extends Component {
       onWrongNetwork: PropTypes.node,
     }),
   };
+  static defaultProps = {
+    currentNetwork: null,
+    requiredNetwork: null,
+    onWeb3Fallback: false,
+    children: {
+      notWeb3CapableBrowser: null,
+      noNetworkAvailableMessage: null,
+      onWrongNetwork: null,
+    },
+  };
 
   state = {
     isCorrectNetwork: null,
@@ -144,6 +154,7 @@ class ConnectionBanner extends Component {
 
   render() {
     const { currentNetwork, requiredNetwork, onWeb3Fallback } = this.props;
+
     const {
       notWeb3CapableBrowserMessage,
       noNetworkAvailableMessage,

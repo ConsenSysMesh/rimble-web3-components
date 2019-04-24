@@ -5,10 +5,11 @@
   "dependencies": {
     "@rimble/connection-banner": "link:../packages/ConnectionBanner",
     "@rimble/utils": "link:../packages/Utils",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-app": "^1.1.2",
     "react-dom": "^16.8.6",
-    "react-scripts": "^2.1.0",
+    "react-scripts": "^3.0.0",
     "rimble-ui": "^0.6.1",
     "styled-components": "^4.2.0"
   },

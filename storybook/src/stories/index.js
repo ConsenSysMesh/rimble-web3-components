@@ -75,4 +75,43 @@ storiesOf('ConnectionBanner', module)
         }}
       </ConnectionBanner>
     </div>
+  ))
+
+  .add('not web3 capable - default', () => (
+    <div>
+      <Text>Preview in Safari or Edge browser</Text>
+      <ConnectionBanner
+        currentNetwork={4}
+        requiredNetwork={4}
+        onWeb3Fallback={false}
+      />
+    </div>
+  ))
+  .add('not web3 capable - custom message', () => (
+    <div>
+      <Text>Preview in Safari or Edge browser</Text>
+      <ConnectionBanner
+        currentNetwork={4}
+        requiredNetwork={4}
+        onWeb3Fallback={false}
+      >
+        {{
+          notWeb3CapableBrowserMessage: (
+            <div>
+              <Text>Not a web3 capable browser</Text>
+            </div>
+          ),
+          noNetworkAvailableMessage: (
+            <div>
+              <Text>No Ethereum network available</Text>
+            </div>
+          ),
+          onWrongNetworkMessage: (
+            <div>
+              <Text>On wrong Ethereum network</Text>
+            </div>
+          ),
+        }}
+      </ConnectionBanner>
+    </div>
   ));

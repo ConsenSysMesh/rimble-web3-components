@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import RimbleUtils from '@rimble/utils';
 import { Flex, Text, Icon, Tooltip } from 'rimble-ui';
 
-const RightNetwork = ({ currentNetwork }) => {
-  const tooltipMessage = `You're on the right network`;
+const RightNetwork = ({ currentNetwork, onNetworkMessage }) => {
+  const tooltipMessage =
+    onNetworkMessage === null
+      ? `You're on the right network`
+      : onNetworkMessage;
   return (
     <Tooltip message={tooltipMessage} placement="bottom">
       <Flex>
@@ -19,10 +22,17 @@ RightNetwork.propTypes = {
   currentNetwork: PropTypes.number.isRequired,
 };
 
-const WrongNetwork = ({ currentNetwork, requiredNetwork }) => {
-  const tooltipMessage = `Switch to the ${RimbleUtils.getEthNetworkNameById(
-    requiredNetwork,
-  )} network`;
+const WrongNetwork = ({
+  currentNetwork,
+  requiredNetwork,
+  onWrongNetworkMessage,
+}) => {
+  const tooltipMessage =
+    onWrongNetworkMessage === null
+      ? `Switch to the ${RimbleUtils.getEthNetworkNameById(
+          requiredNetwork,
+        )} network`
+      : onWrongNetworkMessage;
   return (
     <Tooltip message={tooltipMessage}>
       <Flex>
@@ -36,11 +46,15 @@ const WrongNetwork = ({ currentNetwork, requiredNetwork }) => {
 WrongNetwork.propTypes = {
   currentNetwork: PropTypes.number.isRequired,
   requiredNetwork: PropTypes.number.isRequired,
+  onWrongNetworkMessage: PropTypes.string,
 };
 
-const NoNetwork = () => {
-  const tooltipMessage = `We can't detect a network. Install MetaMask or 
-  switch to a mobile dApp browser like Cipher or Status.`;
+const NoNetwork = ({ noNetworkMessage }) => {
+  const tooltipMessage =
+    noNetworkMessage === null
+      ? `We can't detect a network. Install MetaMask or 
+        switch to a mobile dApp browser like Cipher or Status.`
+      : noNetworkMessage;
   return (
     <Tooltip message={tooltipMessage}>
       <Flex>
@@ -51,11 +65,25 @@ const NoNetwork = () => {
   );
 };
 
-const OnNetwork = ({ currentNetwork }) => {
+const OnNetwork = ({ currentNetwork, onNetworkMessage }) => {
   return (
-    <Flex>
-      <Text mr={2}>{RimbleUtils.getEthNetworkNameById(currentNetwork)}</Text>
-    </Flex>
+    <div>
+      {onNetworkMessage === null ? (
+        <Flex>
+          <Text mr={2}>
+            {RimbleUtils.getEthNetworkNameById(currentNetwork)}
+          </Text>
+        </Flex>
+      ) : (
+        <Tooltip message={onNetworkMessage}>
+          <Flex>
+            <Text mr={2}>
+              {RimbleUtils.getEthNetworkNameById(currentNetwork)}
+            </Text>
+          </Flex>
+        </Tooltip>
+      )}
+    </div>
   );
 };
 
@@ -64,6 +92,27 @@ OnNetwork.propTypes = {
 };
 
 class NetworkIndicator extends React.Component {
+  static propTypes = {
+    currentNetwork: PropTypes.number,
+    requiredNetwork: PropTypes.number,
+    children: PropTypes.shape({
+      onNetworkMessage: PropTypes.string,
+      noNetworkMessage: PropTypes.string,
+      onRequiredNetworkMessage: PropTypes.string,
+      onWrongNetworkMessage: PropTypes.string,
+    }),
+  };
+  static defaultProps = {
+    currentNetwork: null,
+    requiredNetwork: null,
+    children: {
+      onNetworkMessage: null,
+      noNetworkMessage: null,
+      onRequiredNetworkMessage: null,
+      onWrongNetworkMessage: null,
+    },
+  };
+
   state = {
     isCorrectNetwork: null,
   };
@@ -90,37 +139,43 @@ class NetworkIndicator extends React.Component {
   };
 
   render() {
+    const { currentNetwork, requiredNetwork } = this.props;
+
+    const {
+      onNetworkMessage,
+      noNetworkMessage,
+      onRequiredNetworkMessage,
+      onWrongNetworkMessage,
+    } = this.props.children;
+
     return (
       <Flex flexDirection="column">
         <Text fontSize={1} color="#a2a2a2" caps>
           Current Network
         </Text>
-        {this.state.isCorrectNetwork && this.props.requiredNetwork ? (
+        {this.state.isCorrectNetwork && requiredNetwork ? (
           // Has requiredNetwork prop
-          <RightNetwork currentNetwork={this.props.currentNetwork} />
-        ) : this.state.isCorrectNetwork === false &&
-          this.props.requiredNetwork ? (
+          <RightNetwork
+            currentNetwork={currentNetwork}
+            onNetworkMessage={onNetworkMessage}
+          />
+        ) : this.state.isCorrectNetwork === false && requiredNetwork ? (
           // Has requiredNetwork prop
           <WrongNetwork
-            currentNetwork={this.props.currentNetwork}
-            requiredNetwork={this.props.requiredNetwork}
+            currentNetwork={currentNetwork}
+            requiredNetwork={requiredNetwork}
+            onWrongNetworkMessage={onWrongNetworkMessage}
           />
-        ) : this.state.isCorrectNetwork === null &&
-          this.props.requiredNetwork ? (
+        ) : this.state.isCorrectNetwork === null && requiredNetwork ? (
           // Has requiredNetwork prop
-          <div>
-            <NoNetwork />
-            {this.props.currentNetwork} & {this.props.requiredNetwork} &&{' '}
-            {this.state.isCorrectNetwork}
-          </div>
-        ) : this.props.currentNetwork ? (
-          <OnNetwork currentNetwork={this.props.currentNetwork} />
+          <NoNetwork noNetworkMessage={noNetworkMessage} />
+        ) : currentNetwork ? (
+          <OnNetwork
+            currentNetwork={currentNetwork}
+            onNetworkMessage={onNetworkMessage}
+          />
         ) : (
-          <div>
-            <NoNetwork />
-            {this.props.currentNetwork} & {this.props.requiredNetwork} &&{' '}
-            {this.state.isCorrectNetwork}
-          </div>
+          <NoNetwork noNetworkMessage={noNetworkMessage} />
         )}
       </Flex>
     );

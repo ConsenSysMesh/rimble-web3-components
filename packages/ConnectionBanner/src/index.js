@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RimbleUtils from '@rimble/utils';
-import { Box, Flex, Icon, Text, MetaMaskButton, Link } from 'rimble-ui';
-
-const bannerStyle = {
-  margin: '1em',
-  backgroundColor: '#fff',
-  border: '1px solid #ccc',
-  borderRadius: '3px',
-};
+import { Box, Flex, Icon, Text, MetaMaskButton, Link, Flash } from 'rimble-ui';
 
 const WrongNetwork = ({
   currentNetwork,
@@ -19,7 +12,7 @@ const WrongNetwork = ({
     <div>
       {onWrongNetworkMessage === null ? (
         // Show default banner
-        <Box style={bannerStyle} p={3}>
+        <Flash variant={'warning'}>
           <Flex alignItems="center">
             <Box p={4}>
               <Icon name="Warning" color="gold" size="30" />
@@ -36,7 +29,7 @@ const WrongNetwork = ({
               </Text>
             </Flex>
           </Flex>
-        </Box>
+        </Flash>
       ) : (
         // Show custom banner
         onWrongNetworkMessage
@@ -49,7 +42,7 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
   return (
     <div>
       {noNetworkAvailableMessage === null ? (
-        <Box style={bannerStyle} p={3}>
+        <Flash variant={'warning'}>
           <Flex alignItems="center" justifyContent="space-between">
             <Flex alignItems="center">
               <Box p={4}>
@@ -68,7 +61,7 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
               <MetaMaskButton>Install MetaMask</MetaMaskButton>
             </Link>
           </Flex>
-        </Box>
+        </Flash>
       ) : (
         noNetworkAvailableMessage
       )}
@@ -80,7 +73,7 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
   return (
     <div>
       {notWeb3CapableBrowserMessage === null ? (
-        <Box style={bannerStyle} p={3}>
+        <Flash variant={'warning'}>
           <Flex alignItems="center">
             <Box p={4}>
               <Icon name="Warning" color="gold" size="30" />
@@ -94,7 +87,7 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
               </Text>
             </Flex>
           </Flex>
-        </Box>
+        </Flash>
       ) : (
         notWeb3CapableBrowserMessage
       )}

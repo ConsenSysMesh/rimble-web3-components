@@ -11,7 +11,7 @@
     "prop-types": "prop-types@^15.5.4",
     "react": "react@^15.0.0 || ^16.0.0",
     "react-dom": "react-dom@^15.0.0 || ^16.0.0",
-    "rimble-ui": "^0.6.1",
+    "rimble-ui": "^0.7.0",
     "styled-components": ">= 4"
   },
   "devDependencies": {
@@ -21,7 +21,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rimble-ui": "^0.6.1",
+    "rimble-ui": "^0.7.0",
     "styled-components": ">= 4"
   },
   "files": [

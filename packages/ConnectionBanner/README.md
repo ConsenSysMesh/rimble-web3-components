@@ -96,10 +96,6 @@ import ConnectionBanner from '@rimble/connection-banner';
 >
 > Change your network in your MetaMask extension. You're currently on `currentNetworkName`
 
-## Documentation
-
-[Documentation](https://consensys.github.io/rimble-ui/)
-
 ### Issues
 
 [Open an issue](https://github.com/ConsenSys/rimble-web3-components/issues) for any bugs or feature requests

@@ -44,7 +44,6 @@ import NetworkIndicator from '@rimble/network-indicator';
     onWrongNetworkMessage: 'Wrong network',
   }}
 </NetworkIndicator>
-
 ```
 
 ## Props

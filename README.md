@@ -1,6 +1,6 @@
 # Rimble Web3 Components
 
-Monorepo for React components and utility library that help developers build web3 dapps faster with better UX.
+Rimble Web3 Components provides drop-in React components using [Rimble-UI](https://github.com/ConsenSys/rimble-ui) for common UX patterns in decentralized applications. This monorepo includes a utility library and independently versioned packages for each of these components.
 
 ## Requirements
 

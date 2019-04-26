@@ -3,7 +3,7 @@
 
 # @rimble/network-indicator
 
-Web3 React component built with Rimble UI that will display the current ethereum network name based on a given network ID.
+React component built with [Rimble](https://github.com/ConsenSys/rimble-ui) UI that will display the current ethereum network name based on a given network ID and optionally indicate whether it is the network required to use the application.
 
 ## Installation
 

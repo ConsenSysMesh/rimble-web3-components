@@ -97,7 +97,7 @@ Version and publish updated packages to NPM
 
 ### Publishing new packages
 
-To publish to a new package to NPM you must first manually create the package via the command line.
+To publish a new package to NPM you must first manually create the package via the command line.
 
 `npm publish --access public`
 

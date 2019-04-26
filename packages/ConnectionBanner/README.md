@@ -38,7 +38,11 @@ import ConnectionBanner from '@rimble/connection-banner';
 ### Custom messages
 
 ```jsx
-<ConnectionBanner currentNetwork={3} requiredNetwork={1} onWeb3Fallback={false}>
+<ConnectionBanner
+  currentNetwork={network.current.id}
+  requiredNetwork={this.config.requiredNetwork}
+  onWeb3Fallback={web3Fallback}
+
   {{
     notWeb3CapableBrowserMessage: (
       <div>
@@ -92,6 +96,9 @@ import ConnectionBanner from '@rimble/connection-banner';
 >
 > Change your network in your MetaMask extension. You're currently on `currentNetworkName`
 
+## Documentation
+
+[Documentation](https://consensys.github.io/rimble-ui/)
 
 ### Issues
 

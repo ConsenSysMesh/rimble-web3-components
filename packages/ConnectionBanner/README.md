@@ -4,10 +4,7 @@
 
 # @rimble/connection-banner
 
-React component built with [Rimble UI](https://github.com/ConsenSys/rimble-ui) that displays a banner providing information about a user's Ethereum network connection. The banner informs the user of the following scenarios:
-- not using a Web3-capable browser
-- a wallet is not available
-- current Ethereum network does not match the specified required network
+Web3 React component built with Rimble UI that will display an informative banner when the user is not in a web3 capable browser, or when the current browser does not have a wallet available, or when the current ethereum network does not match the required network.
 
 ## Installation
 
@@ -95,6 +92,10 @@ import ConnectionBanner from '@rimble/connection-banner';
 > Switch to the `requiredNetworkName` Ethereum network in MetaMask
 >
 > Change your network in your MetaMask extension. You're currently on `currentNetworkName`
+
+## Documentation
+
+[Documentation](https://consensys.github.io/rimble-ui/)
 
 ### Issues
 

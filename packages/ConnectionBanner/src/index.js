@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RimbleUtils from '@rimble/utils';
-import { Box, Flex, Icon, Text, MetaMaskButton, Link } from 'rimble-ui';
-
-const bannerStyle = {
-  margin: '1em',
-  backgroundColor: '#fff',
-  border: '1px solid #ccc',
-  borderRadius: '3px',
-};
+import { Box, Flex, Icon, Text, MetaMaskButton, Link, Flash } from 'rimble-ui';
 
 const WrongNetwork = ({
   currentNetwork,
@@ -19,24 +12,24 @@ const WrongNetwork = ({
     <div>
       {onWrongNetworkMessage === null ? (
         // Show default banner
-        <Box style={bannerStyle} p={3}>
+        <Flash variant={'danger'}>
           <Flex alignItems="center">
-            <Box p={4}>
-              <Icon name="Warning" color="gold" size="30" />
+            <Box pr={3}>
+              <Icon name="Warning" size="44" />
             </Box>
             <Flex flexDirection="column">
-              <Text fontWeight="bold">
+              <Text fontWeight="bold" color={'inherit'}>
                 Switch to the{' '}
                 {RimbleUtils.getEthNetworkNameById(requiredNetwork)} Ethereum
                 network in MetaMask
               </Text>
-              <Text>
+              <Text color={'inherit'}>
                 Change your network in your MetaMask extension. You're currently
                 on {RimbleUtils.getEthNetworkNameById(currentNetwork)}
               </Text>
             </Flex>
           </Flex>
-        </Box>
+        </Flash>
       ) : (
         // Show custom banner
         onWrongNetworkMessage
@@ -49,31 +42,27 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
   return (
     <div>
       {noNetworkAvailableMessage === null ? (
-        <Box style={bannerStyle} p={3}>
+        <Flash variant={'danger'}>
           <Flex alignItems="center" justifyContent="space-between">
             <Flex alignItems="center">
-              <Box p={4}>
-                <Icon name="Warning" color="gold" size="30" />
+              <Box pr={3}>
+                <Icon name="Warning" size="44" />
               </Box>
               <Flex flexDirection="column">
-                <Text fontWeight="bold">
+                <Text fontWeight="bold" color={'inherit'}>
                   Install MetaMask to use our blockchain features
                 </Text>
-                <Text>
+                <Text color={'inherit'}>
                   This will let you connect using an Ethereum public address
                 </Text>
               </Flex>
             </Flex>
 
-            <MetaMaskButton
-              as={Link}
-              href="https://metamask.io/"
-              target="_blank"
-            >
-              Install MetaMask
-            </MetaMaskButton>
+            <Link href="https://metamask.io/" target="_blank">
+              <MetaMaskButton>Install MetaMask</MetaMaskButton>
+            </Link>
           </Flex>
-        </Box>
+        </Flash>
       ) : (
         noNetworkAvailableMessage
       )}
@@ -85,21 +74,21 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
   return (
     <div>
       {notWeb3CapableBrowserMessage === null ? (
-        <Box style={bannerStyle} p={3}>
+        <Flash variant={'danger'}>
           <Flex alignItems="center">
-            <Box p={4}>
-              <Icon name="Warning" color="gold" size="30" />
+            <Box pr={3}>
+              <Icon name="Warning" size="44" />
             </Box>
             <Flex flexDirection="column">
-              <Text fontWeight="bold">
+              <Text fontWeight="bold" color={'inherit'}>
                 Your browser doesn't support our blockchain features
               </Text>
-              <Text>
+              <Text color={'inherit'}>
                 Switch to either Brave, FireFox, Opera, or Chrome to continue
               </Text>
             </Flex>
           </Flex>
-        </Box>
+        </Flash>
       ) : (
         notWeb3CapableBrowserMessage
       )}

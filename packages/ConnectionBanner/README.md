@@ -4,7 +4,10 @@
 
 # @rimble/connection-banner
 
-Web3 React component built with Rimble UI that will display an informative banner when the user is not in a web3 capable browser, or when the current browser does not have a wallet available, or when the current ethereum network does not match the required network.
+React component built with [Rimble UI](https://github.com/ConsenSys/rimble-ui) that displays a banner providing information about a user's Ethereum network connection. The banner informs the user of the following scenarios:
+- not using a Web3-capable browser
+- a wallet is not available
+- current Ethereum network does not match the specified required network
 
 ## Installation
 
@@ -39,7 +42,7 @@ import ConnectionBanner from '@rimble/connection-banner';
   currentNetwork={network.current.id}
   requiredNetwork={this.config.requiredNetwork}
   onWeb3Fallback={web3Fallback}
->
+
   {{
     notWeb3CapableBrowserMessage: (
       <div>

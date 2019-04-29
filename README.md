@@ -10,25 +10,24 @@ Rimble Web3 Components provides drop-in React components using [Rimble-UI](https
 
 ## Quick Start with Storybook Preview
 
-Install all dependencies
+This repo utilizes Storybook for component visualization and testing.
 
+```shell
+// Install all dependencies
 `yarn install`
 
-Watch for changes to all packages and automaticallyt rebuild
-
+// Watch for changes to all packages and automaticallyt rebuild
 `yarn watch`
 
-Change directory to Storybook
-
+// Change directory to Storybook
 `cd storybook`
 
-Install Storybook
-
+// Install Storybook
 `yarn install`
 
-Start Storybook
-
+// Start Storybook
 `yarn storybook`
+```
 
 You can now edit components that are in the `/package` directory and the changes will update in storybook.
 
@@ -118,7 +117,12 @@ Version and publish updated packages to NPM
   `yarn add rimble-ui`
 
 - styled-components
+
   `yarn add styled-components`
+
+- prop-types
+
+  `yarn add prop-types`
 
 ### Misc
 
@@ -135,20 +139,6 @@ To publish a new package to NPM you must first manually create the package via t
 1.  Create new story for component
 1.  Import component to new story using relative paths
 
-## Storybook
-
-This repo utilizes Storybook for component testing.
-
-Run locally:
-
-```shell
-// change directory
-cd storybook
-
-// launch storybook
-yarn storybook
-```
-
 Pull requests will automatically generate an atomic build that is hosted on Netlify. The link to the hosted version will be posted in the PR.
 
 ## Using components locally in another repo
@@ -156,14 +146,14 @@ Pull requests will automatically generate an atomic build that is hosted on Netl
 1.  Create link to local component in rimble-web3-components repository
 
     ```shell
-    cd packages\connection-banner
+    cd packages/ConnectionBanner
     yarn link
     ```
 
 2.  Link to local component in rimble-app-demo repository
 
     ```shell
-    link @rimble\connection-banner
+    yarn link @rimble/connection-banner
     ```
 
 3.  Modify webpack to [fix multiple issues of styled-components](https://www.styled-components.com/docs/faqs#how-can-i-fix-issues-when-using-npm-link-or-yarn-link)

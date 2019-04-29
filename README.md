@@ -8,39 +8,29 @@ Rimble Web3 Components provides drop-in React components using [Rimble-UI](https
 
 [Yarn](https://yarnpkg.com/en/) - [OS-dependent install instructions](https://yarnpkg.com/en/docs/install)
 
-[Lerna](https://lerna.js.org/) - `npm install -g lerna`
-
-## Quick Start
+## Quick Start with Storybook Preview
 
 Install all dependencies
 
 `yarn install`
 
-Bootstrap packages with lerna
+Watch for changes to all packages and automaticallyt rebuild
 
-`lerna bootstrap`
+`yarn watch`
 
-## Monorepo Scripts
+Change directory to Storybook
 
-Run linting on all packages
+`cd storybook`
 
-`lerna run lint`
+Install Storybook
 
-Run tests on all packages
+`yarn install`
 
-`lerna run test`
+Start Storybook
 
-Compile libraries with Rollup
+`yarn storybook`
 
-`yarn build`
-
-Commit changes to libraries
-
-`git commit -am “commit message”`
-
-Version and publish updated packages to NPM
-
-`lerna publish`
+You can now edit components that are in the `/package` directory and the changes will update in storybook.
 
 ## Monorepo structure
 
@@ -95,7 +85,42 @@ Version and publish updated packages to NPM
 - Rollup transpiles via babel releasable packages
 - Lerna handles multiple package tasks (test, lint, publish)
 
-### Publishing new packages
+## Prepary packages for Pull Request or publishing
+
+Bootstrap packages with lerna
+
+`lerna bootstrap`
+
+Run linting on all packages
+
+`lerna run lint`
+
+Run tests on all packages
+
+`lerna run test`
+
+Compile libraries with Rollup
+
+`yarn build`
+
+Commit changes to libraries
+
+`git commit -am “commit message”`
+
+Version and publish updated packages to NPM
+
+`lerna publish`
+
+### Peer dependencies
+
+- rimble-ui
+
+  `yarn add rimble-ui`
+
+- styled-components
+  `yarn add styled-components`
+
+### Misc
 
 To publish a new package to NPM you must first manually create the package via the command line.
 

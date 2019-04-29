@@ -1,9 +1,14 @@
 {
   "name": "@rimble/utils",
-  "version": "0.0.1-alpha.0",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "Rimble Utils is part of an array of tools to help web3 dApp developers launch products faster and with better UX.",
-  "keywords": ["web3", "dapp", "utilities", "rimble"],
+  "keywords": [
+    "web3",
+    "dapp",
+    "utilities",
+    "rimble"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ConsenSys/rimble-web3-components"

@@ -12,7 +12,7 @@ const WrongNetwork = ({
     <div>
       {onWrongNetworkMessage === null ? (
         // Show default banner
-        <Flash variant={'warning'}>
+        <Flash variant={'danger'}>
           <Flex alignItems="center">
             <Box pr={3}>
               <Icon name="Warning" size="44" />
@@ -42,7 +42,7 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
   return (
     <div>
       {noNetworkAvailableMessage === null ? (
-        <Flash variant={'warning'}>
+        <Flash variant={'danger'}>
           <Flex alignItems="center" justifyContent="space-between">
             <Flex alignItems="center">
               <Box pr={3}>
@@ -74,7 +74,7 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
   return (
     <div>
       {notWeb3CapableBrowserMessage === null ? (
-        <Flash variant={'warning'}>
+        <Flash variant={'danger'}>
           <Flex alignItems="center">
             <Box pr={3}>
               <Icon name="Warning" size="44" />

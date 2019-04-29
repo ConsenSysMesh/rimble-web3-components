@@ -12,21 +12,31 @@ Rimble Web3 Components provides drop-in React components using [Rimble-UI](https
 
 This repo utilizes Storybook for component visualization and testing.
 
-```shell
-// Install all dependencies
-`yarn install`
+```console
+// Clone the repo
+git clone git@github.com:ConsenSys/rimble-web3-components.git
+
+// Change into the repository root
+cd rimble-web3-components
+
+// Install all dependencies from repository root directory
+yarn install
 
 // Watch for changes to all packages and automaticallyt rebuild
-`yarn watch`
+yarn watch
+```
 
-// Change directory to Storybook
-`cd storybook`
+Open a second terminal window
+
+```console
+// From a different terminal session, change directory to Storybook inside the root repository
+cd storybook
 
 // Install Storybook
-`yarn install`
+yarn install
 
 // Start Storybook
-`yarn storybook`
+yarn storybook
 ```
 
 You can now edit components that are in the `/package` directory and the changes will update in storybook.
@@ -145,14 +155,14 @@ Pull requests will automatically generate an atomic build that is hosted on Netl
 
 1.  Create link to local component in rimble-web3-components repository
 
-    ```shell
+    ```console
     cd packages/ConnectionBanner
     yarn link
     ```
 
 2.  Link to local component in rimble-app-demo repository
 
-    ```shell
+    ```console
     yarn link @rimble/connection-banner
     ```
 

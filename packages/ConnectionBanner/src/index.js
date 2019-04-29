@@ -14,16 +14,16 @@ const WrongNetwork = ({
         // Show default banner
         <Flash variant={'warning'}>
           <Flex alignItems="center">
-            <Box p={4}>
-              <Icon name="Warning" color="gold" size="30" />
+            <Box pr={3}>
+              <Icon name="Warning" size="44" />
             </Box>
             <Flex flexDirection="column">
-              <Text fontWeight="bold">
+              <Text fontWeight="bold" color={'inherit'}>
                 Switch to the{' '}
                 {RimbleUtils.getEthNetworkNameById(requiredNetwork)} Ethereum
                 network in MetaMask
               </Text>
-              <Text>
+              <Text color={'inherit'}>
                 Change your network in your MetaMask extension. You're currently
                 on {RimbleUtils.getEthNetworkNameById(currentNetwork)}
               </Text>
@@ -45,26 +45,22 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
         <Flash variant={'warning'}>
           <Flex alignItems="center" justifyContent="space-between">
             <Flex alignItems="center">
-              <Box p={4}>
-                <Icon name="Warning" color="gold" size="30" />
+              <Box pr={3}>
+                <Icon name="Warning" size="44" />
               </Box>
               <Flex flexDirection="column">
-                <Text fontWeight="bold">
+                <Text fontWeight="bold" color={'inherit'}>
                   Install MetaMask to use our blockchain features
                 </Text>
-                <Text>
+                <Text color={'inherit'}>
                   This will let you connect using an Ethereum public address
                 </Text>
               </Flex>
             </Flex>
 
-            <MetaMaskButton
-              as={Link}
-              href="https://metamask.io/"
-              target="_blank"
-            >
-              Install MetaMask
-            </MetaMaskButton>
+            <Link href="https://metamask.io/" target="_blank">
+              <MetaMaskButton>Install MetaMask</MetaMaskButton>
+            </Link>
           </Flex>
         </Flash>
       ) : (
@@ -80,14 +76,14 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
       {notWeb3CapableBrowserMessage === null ? (
         <Flash variant={'warning'}>
           <Flex alignItems="center">
-            <Box p={4}>
-              <Icon name="Warning" color="gold" size="30" />
+            <Box pr={3}>
+              <Icon name="Warning" size="44" />
             </Box>
             <Flex flexDirection="column">
-              <Text fontWeight="bold">
+              <Text fontWeight="bold" color={'inherit'}>
                 Your browser doesn't support our blockchain features
               </Text>
-              <Text>
+              <Text color={'inherit'}>
                 Switch to either Brave, FireFox, Opera, or Chrome to continue
               </Text>
             </Flex>

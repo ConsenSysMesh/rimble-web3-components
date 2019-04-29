@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RimbleUtils from '@rimble/utils';
-import { Flex, Text, Icon, Tooltip } from 'rimble-ui';
+import { Flex, Text, Icon, Tooltip, Box } from 'rimble-ui';
+import { ThemeProvider } from 'rimble-ui';
 
 const RightNetwork = ({ currentNetwork, onNetworkMessage }) => {
   const tooltipMessage =
@@ -9,12 +10,16 @@ const RightNetwork = ({ currentNetwork, onNetworkMessage }) => {
       ? `You're on the right network`
       : onNetworkMessage;
   return (
-    <Tooltip message={tooltipMessage} placement="bottom">
-      <Flex>
-        <Text mr={2}>{RimbleUtils.getEthNetworkNameById(currentNetwork)}</Text>
-        <Icon name="CheckCircle" color="green" />
-      </Flex>
-    </Tooltip>
+    <ThemeProvider>
+      <Tooltip message={tooltipMessage} placement="bottom">
+        <Flex>
+          <Text mr={2}>
+            {RimbleUtils.getEthNetworkNameById(currentNetwork)}
+          </Text>
+          <Icon name="CheckCircle" color="#28C081" />
+        </Flex>
+      </Tooltip>
+    </ThemeProvider>
   );
 };
 
@@ -37,7 +42,7 @@ const WrongNetwork = ({
     <Tooltip message={tooltipMessage}>
       <Flex>
         <Text mr={2}>{RimbleUtils.getEthNetworkNameById(currentNetwork)}</Text>
-        <Icon name="Error" color="red" />
+        <Icon name="Error" color="#DC2C10" />
       </Flex>
     </Tooltip>
   );
@@ -59,7 +64,7 @@ const NoNetwork = ({ noNetworkMessage }) => {
     <Tooltip message={tooltipMessage}>
       <Flex>
         <Text mr={2}>None</Text>
-        <Icon name="Error" color="red" />
+        <Icon name="Error" color="#DC2C10" />
       </Flex>
     </Tooltip>
   );
@@ -149,35 +154,39 @@ class NetworkIndicator extends React.Component {
     } = this.props.children;
 
     return (
-      <Flex flexDirection="column">
-        <Text fontSize={1} color="#a2a2a2" caps>
-          Current Network
-        </Text>
-        {this.state.isCorrectNetwork && requiredNetwork ? (
-          // Has requiredNetwork prop
-          <RightNetwork
-            currentNetwork={currentNetwork}
-            onNetworkMessage={onNetworkMessage}
-          />
-        ) : this.state.isCorrectNetwork === false && requiredNetwork ? (
-          // Has requiredNetwork prop
-          <WrongNetwork
-            currentNetwork={currentNetwork}
-            requiredNetwork={requiredNetwork}
-            onWrongNetworkMessage={onWrongNetworkMessage}
-          />
-        ) : this.state.isCorrectNetwork === null && requiredNetwork ? (
-          // Has requiredNetwork prop
-          <NoNetwork noNetworkMessage={noNetworkMessage} />
-        ) : currentNetwork ? (
-          <OnNetwork
-            currentNetwork={currentNetwork}
-            onNetworkMessage={onNetworkMessage}
-          />
-        ) : (
-          <NoNetwork noNetworkMessage={noNetworkMessage} />
-        )}
-      </Flex>
+      <Box>
+        <Box display="inline-block">
+          <Flex flexDirection="column">
+            <Text fontSize={1} color="#a2a2a2" caps>
+              Current Network
+            </Text>
+            {this.state.isCorrectNetwork && requiredNetwork ? (
+              // Has requiredNetwork prop
+              <RightNetwork
+                currentNetwork={currentNetwork}
+                onNetworkMessage={onNetworkMessage}
+              />
+            ) : this.state.isCorrectNetwork === false && requiredNetwork ? (
+              // Has requiredNetwork prop
+              <WrongNetwork
+                currentNetwork={currentNetwork}
+                requiredNetwork={requiredNetwork}
+                onWrongNetworkMessage={onWrongNetworkMessage}
+              />
+            ) : this.state.isCorrectNetwork === null && requiredNetwork ? (
+              // Has requiredNetwork prop
+              <NoNetwork noNetworkMessage={noNetworkMessage} />
+            ) : currentNetwork ? (
+              <OnNetwork
+                currentNetwork={currentNetwork}
+                onNetworkMessage={onNetworkMessage}
+              />
+            ) : (
+              <NoNetwork noNetworkMessage={noNetworkMessage} />
+            )}
+          </Flex>
+        </Box>
+      </Box>
     );
   }
 }

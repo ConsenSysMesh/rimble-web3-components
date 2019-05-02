@@ -1,5 +1,8 @@
 ![Rimble Network Indicator - current network](./_assets/network-indicator-current-network.png)
+
 ![Rimble Network Indicator - wrong network](./_assets/network-indicator-wrong-network.png)
+
+![Rimble Network Indicator - no network](./_assets/network-indicator-no-network.png)
 
 # @rimble/network-indicator
 
@@ -66,11 +69,11 @@ Only when `requiredNetwork` exists and matches `currentNetwork` prop
 
 ### noNetworkMessage
 
-> We can't detect a network. Install MetaMask or switch to a mobile dApp browser like Cipher or Status.
+> You're not on an Ethereum network
 
 ### onWrongNetworkMessage
 
-> Switch to the `requiredNetworkName` Network
+> You're on the wrong network
 
 ### Issues
 

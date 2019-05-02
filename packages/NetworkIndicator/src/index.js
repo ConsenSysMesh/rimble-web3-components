@@ -34,9 +34,7 @@ const WrongNetwork = ({
 }) => {
   const tooltipMessage =
     onWrongNetworkMessage === null
-      ? `Switch to the ${RimbleUtils.getEthNetworkNameById(
-          requiredNetwork,
-        )} network`
+      ? `You're on the wrong network`
       : onWrongNetworkMessage;
   return (
     <Tooltip message={tooltipMessage}>
@@ -57,8 +55,7 @@ WrongNetwork.propTypes = {
 const NoNetwork = ({ noNetworkMessage }) => {
   const tooltipMessage =
     noNetworkMessage === null
-      ? `We can't detect a network. Install MetaMask or 
-        switch to a mobile dApp browser like Cipher or Status.`
+      ? `You're not on an Ethereum network`
       : noNetworkMessage;
   return (
     <Tooltip message={tooltipMessage}>

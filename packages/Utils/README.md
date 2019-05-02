@@ -23,6 +23,7 @@ import RimbleUtils from '@rimble/utils';
 
 const canDoWeb3 = RimbleUtils.browserIsWeb3Compatible(); // returns true or false boolean
 const currentNetworkName = RimbleUtils.getEthNetworkNameById(4); // returns "Rinkeby" string
+const isMobile = RimbleUtils.isMobileDevice(); // returns true or false boolean
 ```
 
 ## Methods of RimbleUtils
@@ -31,6 +32,7 @@ const currentNetworkName = RimbleUtils.getEthNetworkNameById(4); // returns "Rin
 | --------------------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------ |
 | browserIsWeb3Capable  | none                | boolean | Examines brower's UserAgent and determines if browser is recent Chrome, FireFox, Brave, or Opera |
 | getEthNetworkNameById | Ethereum network ID | string  | Converts an Ethereum network ID into a network name                                              |
+| isMobileBrowser       | none                | boolean | Examines browser's UserAgent and determines if the current device is a mobile platform           |
 
 ## Documentation
 

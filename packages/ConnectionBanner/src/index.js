@@ -22,20 +22,23 @@ const WrongNetwork = ({
                 Switch to the{' '}
                 {RimbleUtils.getEthNetworkNameById(requiredNetwork)} Ethereum
                 network in{' '}
-                <Text
-                  color={'inherit'}
-                  fontWeight={'inherit'}
-                  display={['none', 'none', 'inline-block', 'inline-block']}
-                >
-                  MetaMask
-                </Text>
-                <Text
-                  color={'inherit'}
-                  fontWeight={'inherit'}
-                  display={['inline-block', 'inline-block', 'none', 'none']}
-                >
-                  Settings
-                </Text>
+                {RimbleUtils.isMobileDevice() ? (
+                  <Text
+                    color={'inherit'}
+                    fontWeight={'inherit'}
+                    display={'inline-block'}
+                  >
+                    Settings
+                  </Text>
+                ) : (
+                  <Text
+                    color={'inherit'}
+                    fontWeight={'inherit'}
+                    display={'inline-block'}
+                  >
+                    MetaMask
+                  </Text>
+                )}
               </Text>
               <Text color={'inherit'}>
                 Change your network in your MetaMask extension. You're currently
@@ -95,19 +98,16 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
               <Text fontWeight="bold" color={'inherit'}>
                 Your browser doesn't support our blockchain features
               </Text>
-              <Text
-                color={'inherit'}
-                display={['none', 'none', 'block', 'block']}
-              >
-                Switch to either Brave, FireFox, Opera, or Chrome to continue
-              </Text>
-              <Text
-                color={'inherit'}
-                display={['block', 'block', 'none', 'none']}
-              >
-                Try a mobile wallet browser like Status, Coinbase wallet or
-                Cipher
-              </Text>
+              {RimbleUtils.isMobileDevice() ? (
+                <Text color={'inherit'}>
+                  Try a mobile wallet browser like Status, Coinbase wallet or
+                  Cipher
+                </Text>
+              ) : (
+                <Text color={'inherit'}>
+                  Switch to either Brave, FireFox, Opera, or Chrome to continue
+                </Text>
+              )}
             </Flex>
           </Flex>
         </Flash>

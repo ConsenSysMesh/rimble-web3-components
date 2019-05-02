@@ -21,7 +21,21 @@ const WrongNetwork = ({
               <Text fontWeight="bold" color={'inherit'}>
                 Switch to the{' '}
                 {RimbleUtils.getEthNetworkNameById(requiredNetwork)} Ethereum
-                network in MetaMask
+                network in{' '}
+                <Text
+                  color={'inherit'}
+                  fontWeight={'inherit'}
+                  display={['none', 'none', 'inline-block', 'inline-block']}
+                >
+                  MetaMask
+                </Text>
+                <Text
+                  color={'inherit'}
+                  fontWeight={'inherit'}
+                  display={['inline-block', 'inline-block', 'none', 'none']}
+                >
+                  Settings
+                </Text>
               </Text>
               <Text color={'inherit'}>
                 Change your network in your MetaMask extension. You're currently
@@ -83,8 +97,18 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
               <Text fontWeight="bold" color={'inherit'}>
                 Your browser doesn't support our blockchain features
               </Text>
-              <Text color={'inherit'}>
+              <Text
+                color={'inherit'}
+                display={['none', 'none', 'block', 'block']}
+              >
                 Switch to either Brave, FireFox, Opera, or Chrome to continue
+              </Text>
+              <Text
+                color={'inherit'}
+                display={['block', 'block', 'none', 'none']}
+              >
+                Try a mobile wallet browser like Status, Coinbase wallet or
+                Cipher
               </Text>
             </Flex>
           </Flex>

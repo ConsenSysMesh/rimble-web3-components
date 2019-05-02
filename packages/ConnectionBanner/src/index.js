@@ -64,10 +64,8 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
               </Box>
               <Flex flexDirection="column">
                 <Text fontWeight="bold" color={'inherit'}>
-                  Install MetaMask to use our blockchain features
-                </Text>
-                <Text color={'inherit'}>
-                  This will let you connect using an Ethereum public address
+                  Install the MetaMask browser extension to use our blockchain
+                  features in your current browser
                 </Text>
               </Flex>
             </Flex>

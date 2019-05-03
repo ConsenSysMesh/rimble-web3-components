@@ -41,8 +41,10 @@ const WrongNetwork = ({
                 )}
               </Text>
               <Text color={'inherit'}>
-                Change your network in your MetaMask extension. You're currently
-                on {RimbleUtils.getEthNetworkNameById(currentNetwork)}
+                To use our blockchain features, you need to be on the{' '}
+                {RimbleUtils.getEthNetworkNameById(requiredNetwork)} network.
+                You're currently on{' '}
+                {RimbleUtils.getEthNetworkNameById(currentNetwork)}.
               </Text>
             </Flex>
           </Flex>

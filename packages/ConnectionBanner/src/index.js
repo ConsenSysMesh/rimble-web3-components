@@ -21,11 +21,27 @@ const WrongNetwork = ({
               <Text fontWeight="bold" color={'inherit'}>
                 Switch to the{' '}
                 {RimbleUtils.getEthNetworkNameById(requiredNetwork)} Ethereum
-                network in MetaMask
+                network in{' '}
+                <Text
+                  color={'inherit'}
+                  fontWeight={'inherit'}
+                  display={['none', 'none', 'inline-block', 'inline-block']}
+                >
+                  MetaMask
+                </Text>
+                <Text
+                  color={'inherit'}
+                  fontWeight={'inherit'}
+                  display={['inline-block', 'inline-block', 'none', 'none']}
+                >
+                  Settings
+                </Text>
               </Text>
               <Text color={'inherit'}>
-                Change your network in your MetaMask extension. You're currently
-                on {RimbleUtils.getEthNetworkNameById(currentNetwork)}
+                To use our blockchain features, you need to be on the{' '}
+                {RimbleUtils.getEthNetworkNameById(requiredNetwork)} network.
+                You're currently on{' '}
+                {RimbleUtils.getEthNetworkNameById(currentNetwork)}.
               </Text>
             </Flex>
           </Flex>
@@ -50,10 +66,8 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
               </Box>
               <Flex flexDirection="column">
                 <Text fontWeight="bold" color={'inherit'}>
-                  Install MetaMask to use our blockchain features
-                </Text>
-                <Text color={'inherit'}>
-                  This will let you connect using an Ethereum public address
+                  Install the MetaMask browser extension to use our blockchain
+                  features in your current browser
                 </Text>
               </Flex>
             </Flex>
@@ -83,8 +97,18 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
               <Text fontWeight="bold" color={'inherit'}>
                 Your browser doesn't support our blockchain features
               </Text>
-              <Text color={'inherit'}>
+              <Text
+                color={'inherit'}
+                display={['none', 'none', 'block', 'block']}
+              >
                 Switch to either Brave, FireFox, Opera, or Chrome to continue
+              </Text>
+              <Text
+                color={'inherit'}
+                display={['block', 'block', 'none', 'none']}
+              >
+                Try a mobile wallet browser like Status, Coinbase wallet or
+                Cipher
               </Text>
             </Flex>
           </Flex>

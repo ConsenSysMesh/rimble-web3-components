@@ -53,35 +53,7 @@ const funcs = {
 
   // Current browser is detected as mobile
   isMobileDevice() {
-    // User Agent
-    const browser = Bowser.getParser(window.navigator.userAgent);
-    console.log('browser: ', browser);
-    const mobilePlatform = browser.satisfies({
-      mobile: {
-        safari: '>=0',
-        'android browser': '>=0',
-        opera: '>=0',
-        firefox: '>=0',
-        edge: '>=0',
-        chromium: '>=0',
-        chrome: '>=0',
-        blackberry: '>=0',
-        android: '>=0',
-        'UC Browser': '>=0',
-      },
-      tablet: {
-        safari: '>=0',
-        'android browser': '>=0',
-        opera: '>=0',
-        firefox: '>=0',
-        edge: '>=0',
-        chromium: '>=0',
-        chrome: '>=0',
-        blackberry: '>=0',
-        android: '>=0',
-        'UC Browser': '>=0',
-      },
-    })
+    const mobilePlatform = /Mobi|Android/i.test(navigator.userAgent)
       ? true
       : false;
 

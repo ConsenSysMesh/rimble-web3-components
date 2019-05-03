@@ -22,8 +22,6 @@ const funcs = {
 
   // Returns a network name based on a network ID
   getEthNetworkNameById(networkId) {
-    console.log('networkId', networkId);
-
     let networkName = '';
 
     if (typeof networkId === 'undefined') {

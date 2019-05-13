@@ -1,11 +1,11 @@
 {
   "name": "storybook",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@rimble/connection-banner": "^1.0.0",
-    "@rimble/network-indicator": "^1.0.0",
-    "@rimble/utils": "^1.0.0",
+    "link:../packages/ConnectionBanner": "^1.1.0",
+    "link:../packages/NetworkIndicator": "^1.1.0",
+    "link:../packages/Utils": "^1.1.0",
     "react": "^16.8.6",
     "react-app": "^1.1.2",
     "react-dom": "^16.8.6",

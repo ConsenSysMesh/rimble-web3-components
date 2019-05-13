@@ -9,5 +9,12 @@ module.exports = async ({ config }) => {
     'styled-components',
   );
 
+  // Enable story-sources storybook addon
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  });
+
   return config;
 };

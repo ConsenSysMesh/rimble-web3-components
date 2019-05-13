@@ -10,16 +10,12 @@ const RightNetwork = ({ currentNetwork, onNetworkMessage }) => {
       ? `You're on the right network`
       : onNetworkMessage;
   return (
-    <ThemeProvider>
-      <Tooltip message={tooltipMessage} placement="bottom">
-        <Flex>
-          <Text mr={2}>
-            {RimbleUtils.getEthNetworkNameById(currentNetwork)}
-          </Text>
-          <Icon name="CheckCircle" color="#28C081" />
-        </Flex>
-      </Tooltip>
-    </ThemeProvider>
+    <Tooltip message={tooltipMessage} placement="bottom">
+      <Flex>
+        <Text mr={2}>{RimbleUtils.getEthNetworkNameById(currentNetwork)}</Text>
+        <Icon name="CheckCircle" color="#28C081" />
+      </Flex>
+    </Tooltip>
   );
 };
 

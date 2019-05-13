@@ -38,6 +38,9 @@ const funcs = {
       case 4:
         networkName = 'Rinkeby';
         break;
+      case 5:
+        networkName = 'Goerli';
+        break;
       case 42:
         networkName = 'Kovan';
         break;

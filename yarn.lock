@@ -930,6 +930,13 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
+"@rimble/connection-banner@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@rimble/connection-banner/-/connection-banner-1.0.0.tgz#54304b26bc3fb35f8af1f4c9330d9e894c191f7d"
+  integrity sha512-R0W9tOiDEug515z8L0WX4A9eHJHtmcTDQ1CSR/ZML5ZHN4RchWfuZWpqnfl5SB0od2Djp+F9mkCZvkwKgr0pqw==
+  dependencies:
+    "@rimble/utils" "^1.0.0"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"

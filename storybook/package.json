@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@rimble/ConnectionBanner": "^1.0.0",
-    "@rimble/NetworkIndicator": "^1.0.0",
-    "@rimble/Utils": "^1.0.0",
+    "@rimble/connection-banner": "^1.0.0",
+    "@rimble/network-indicator": "^1.0.0",
+    "@rimble/utils": "^1.0.0",
     "react": "^16.8.6",
     "react-app": "^1.1.2",
     "react-dom": "^16.8.6",

@@ -20,8 +20,7 @@ const WrongNetwork = ({
             <Flex flexDirection="column">
               <Text fontWeight="bold" color={'inherit'}>
                 Switch to the{' '}
-                {RimbleUtils.getEthNetworkNameById(requiredNetwork)} Ethereum
-                network in{' '}
+                {RimbleUtils.getEthNetworkNameById(requiredNetwork)} network in{' '}
                 <Text
                   color={'inherit'}
                   fontWeight={'inherit'}

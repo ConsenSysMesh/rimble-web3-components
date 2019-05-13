@@ -7,14 +7,14 @@ storiesOf('ConnectionBanner', module)
   .add('wrong network - default', () => (
     <ConnectionBanner
       currentNetwork={3}
-      requiredNetwork={4}
+      requiredNetwork={5}
       onWeb3Fallback={false}
     />
   ))
   .add('wrong network - custom message', () => (
     <ConnectionBanner
       currentNetwork={3}
-      requiredNetwork={4}
+      requiredNetwork={5}
       onWeb3Fallback={false}
     >
       {{

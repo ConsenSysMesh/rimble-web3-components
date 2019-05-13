@@ -50,6 +50,15 @@ const funcs = {
     }
     return networkName;
   },
+
+  // Current browser is detected as mobile
+  isMobileDevice() {
+    const mobilePlatform = /Mobi|Android/i.test(navigator.userAgent)
+      ? true
+      : false;
+
+    return mobilePlatform;
+  },
 };
 
 export default funcs;

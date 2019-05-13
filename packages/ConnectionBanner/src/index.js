@@ -96,19 +96,16 @@ const NotWeb3Browser = ({ notWeb3CapableBrowserMessage }) => {
               <Text fontWeight="bold" color={'inherit'}>
                 Your browser doesn't support our blockchain features
               </Text>
-              <Text
-                color={'inherit'}
-                display={['none', 'none', 'block', 'block']}
-              >
-                Switch to either Brave, FireFox, Opera, or Chrome to continue
-              </Text>
-              <Text
-                color={'inherit'}
-                display={['block', 'block', 'none', 'none']}
-              >
-                Try a mobile wallet browser like Status, Coinbase wallet or
-                Cipher
-              </Text>
+              {RimbleUtils.isMobileDevice() ? (
+                <Text color={'inherit'}>
+                  Try a mobile wallet browser like Status, Coinbase wallet or
+                  Cipher
+                </Text>
+              ) : (
+                <Text color={'inherit'}>
+                  Switch to either Brave, FireFox, Opera, or Chrome to continue
+                </Text>
+              )}
             </Flex>
           </Flex>
         </Flash>

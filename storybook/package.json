@@ -3,9 +3,9 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "link:../packages/ConnectionBanner": "^1.1.0",
-    "link:../packages/NetworkIndicator": "^1.1.0",
-    "link:../packages/Utils": "^1.1.0",
+    "@rimble/ConnectionBanner": "*",
+    "@rimble/NetworkIndicator": "*",
+    "@rimble/Utils": "*",
     "react": "^16.8.6",
     "react-app": "^1.1.2",
     "react-dom": "^16.8.6",

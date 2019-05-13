@@ -22,8 +22,9 @@ cd rimble-web3-components
 // Install all dependencies from repository root directory
 yarn install
 
-// Watch for changes to all packages and automaticallyt rebuild
-yarn watch
+// Watch for changes to all packages and automatically rebuild all packages. Use this with the `start storybook` command to preview components during development.
+
+yarn start
 ```
 
 Open a second terminal window

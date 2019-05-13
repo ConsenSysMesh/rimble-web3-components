@@ -3,14 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@rimble/connection-banner": "link:../packages/ConnectionBanner",
-    "@rimble/utils": "link:../packages/Utils",
-    "prop-types": "^15.7.2",
+    "@rimble/connection-banner": "^1.0.0",
+    "@rimble/network-indicator": "^1.0.0",
+    "@rimble/utils": "^1.0.0",
     "react": "^16.8.6",
     "react-app": "^1.1.2",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.0.0",
-    "rimble-ui": "^0.6.1",
+    "rimble-ui": "^0.8.0",
     "styled-components": "^4.2.0"
   },
   "scripts": {
@@ -43,6 +42,8 @@
     "@storybook/addon-viewport": "^5.0.11",
     "@storybook/addons": "^5.0.10",
     "@storybook/react": "^5.0.10",
-    "babel-loader": "^8.0.5"
+    "babel-loader": "=8.0.5",
+    "prop-types": "^15.7.2",
+    "react-scripts": "^3.0.1"
   }
 }

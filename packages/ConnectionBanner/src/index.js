@@ -20,25 +20,21 @@ const WrongNetwork = ({
             <Flex flexDirection="column">
               <Text fontWeight="bold" color={'inherit'}>
                 Switch to the{' '}
-                {RimbleUtils.getEthNetworkNameById(requiredNetwork)} Ethereum
-                network in{' '}
-                {RimbleUtils.isMobileDevice() ? (
-                  <Text
-                    color={'inherit'}
-                    fontWeight={'inherit'}
-                    display={'inline-block'}
-                  >
-                    Settings
-                  </Text>
-                ) : (
-                  <Text
-                    color={'inherit'}
-                    fontWeight={'inherit'}
-                    display={'inline-block'}
-                  >
-                    MetaMask
-                  </Text>
-                )}
+                {RimbleUtils.getEthNetworkNameById(requiredNetwork)} network in{' '}
+                <Text
+                  color={'inherit'}
+                  fontWeight={'inherit'}
+                  display={['none', 'none', 'inline-block', 'inline-block']}
+                >
+                  MetaMask
+                </Text>
+                <Text
+                  color={'inherit'}
+                  fontWeight={'inherit'}
+                  display={['inline-block', 'inline-block', 'none', 'none']}
+                >
+                  Settings
+                </Text>
               </Text>
               <Text color={'inherit'}>
                 To use our blockchain features, you need to be on the{' '}

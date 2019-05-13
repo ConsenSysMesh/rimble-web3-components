@@ -11,6 +11,7 @@ module.exports = {
     ],
     'prettier/prettier': 'error',
     'max-len': ['error', 80],
+    'import/imports-first': ['warn', 'DISABLE-absolute-first'],
   },
   env: {
     browser: true,

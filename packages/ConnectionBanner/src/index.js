@@ -156,11 +156,7 @@ class ConnectionBanner extends Component {
   }
 
   componentDidUpdate() {
-    if (
-      this.props.currentNetwork &&
-      this.props.requiredNetwork &&
-      this.state.isCorrectNetwork === null
-    ) {
+    if (this.props.currentNetwork && this.props.requiredNetwork) {
       this.checkCorrectNetwork();
     }
   }

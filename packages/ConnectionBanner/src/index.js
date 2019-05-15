@@ -172,18 +172,18 @@ class ConnectionBanner extends Component {
 
     return (
       <div>
-        {this.state.isCorrectNetwork === false ? (
-          <WrongNetwork
-            currentNetwork={currentNetwork}
-            requiredNetwork={requiredNetwork}
-            onWrongNetworkMessage={onWrongNetworkMessage}
-          />
-        ) : this.state.browserIsWeb3Capable === false ? (
+        {this.state.browserIsWeb3Capable === false ? (
           <NotWeb3Browser
             notWeb3CapableBrowserMessage={notWeb3CapableBrowserMessage}
           />
         ) : onWeb3Fallback === true || currentNetwork === null ? (
           <NoNetwork noNetworkAvailableMessage={noNetworkAvailableMessage} />
+        ) : this.state.isCorrectNetwork === false ? (
+          <WrongNetwork
+            currentNetwork={currentNetwork}
+            requiredNetwork={requiredNetwork}
+            onWrongNetworkMessage={onWrongNetworkMessage}
+          />
         ) : null}
       </div>
     );

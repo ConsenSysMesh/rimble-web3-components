@@ -59,7 +59,7 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
       {noNetworkAvailableMessage === null ? (
         <Flash variant={'danger'}>
           <Flex alignItems="center" justifyContent="space-between">
-            <Flex alignItems="center">
+            <Flex alignItems="center" pr={'2'}>
               <Box pr={3}>
                 <Icon name="Warning" size="44" />
               </Box>

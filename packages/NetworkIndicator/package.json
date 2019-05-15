@@ -1,6 +1,6 @@
 {
   "name": "@rimble/network-indicator",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "license": "MIT",
   "description": "Web3 React component built with Rimble UI that will display the current ethereum network name based on a given network ID.",
   "keywords": [

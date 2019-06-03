@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RimbleUtils from '@rimble/utils';
-import { Box, Flex, Icon, Text, MetaMaskButton, Link, Flash } from 'rimble-ui';
+import { Box, Flex, Icon, Text, MetaMaskButton, Flash } from 'rimble-ui';
 
 const WrongNetwork = ({
   currentNetwork,

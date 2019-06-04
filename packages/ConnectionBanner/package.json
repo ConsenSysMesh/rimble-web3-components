@@ -23,20 +23,20 @@
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
     "@rimble/utils": "^1.2.0",
-    "rimble-ui": "^0.9.0"
+    "rimble-ui": "^0.9.1"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
-    "rimble-ui": "^0.9.0",
+    "rimble-ui": "^0.9.1",
     "styled-components": ">= 4"
   },
   "devDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rimble-ui": "^0.9.0",
+    "rimble-ui": "^0.9.1",
     "styled-components": ">= 4"
   },
   "files": [

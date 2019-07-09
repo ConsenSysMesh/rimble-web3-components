@@ -37,6 +37,7 @@ class EthConverter extends React.Component {
           this.setState({ results: results });
           this.updateTimeAgo(results.timestamp);
           this.updateConvertedValue();
+          this.getCurrencyDetails(results.quote);
           return results;
         });
       return results;
@@ -54,6 +55,14 @@ class EthConverter extends React.Component {
     });
 
     return currencyList;
+  };
+
+  getCurrencyDetails = currencyCode => {
+    currencyCode = Currencies.filter(currency => {
+      console.log(currency);
+    });
+
+    return currencyCode;
   };
 
   updateConvertedValue = () => {
@@ -130,7 +139,7 @@ class EthConverter extends React.Component {
     const values = await this.populateDropdown();
     console.log('values', values);
     this.setState({ conversions: values, loading: false }, () => {
-      this.buildCurrencyList();
+      // this.buildCurrencyList();
     });
   }
 

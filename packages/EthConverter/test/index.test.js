@@ -4,6 +4,6 @@ import ConnectionBanner from '../src';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<ConnectionBanner />, div);
+  ReactDOM.render(<EthConverter />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

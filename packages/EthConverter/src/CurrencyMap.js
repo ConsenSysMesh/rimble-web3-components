@@ -1,275 +1,325 @@
-export const Currencies = {
-  eth: {
+const Currencies = [
+  {
     name: 'Ethereum',
+    symbol: 'eth',
     website: '',
     type: 'crypto',
   },
-  adt: {
+  {
     name: 'adToken',
+    symbol: 'adt',
     website: '',
     type: 'crypto',
   },
-  adx: {
+  {
     name: 'AdEx',
+    symbol: 'adx',
     website: '',
     type: 'crypto',
   },
-  ant: {
+  {
     name: 'Aragon',
+    symbol: 'ant',
     website: '',
     type: 'crypto',
   },
-  aud: {
+  {
     name: 'Australia Dollar',
+    symbol: 'aud',
     type: 'fiat',
     symbol: '&#x0024;',
   },
-  bat: {
+  {
     name: 'Basic Attention Token',
+    symbol: 'bat',
     website: '',
     type: 'crypto',
   },
-  bnt: {
+  {
     name: 'Bancor',
+    symbol: 'bnt',
     website: '',
     type: 'crypto',
   },
-  btc: {
+  {
     name: 'Bitcoin',
+    symbol: 'btc',
     website: '',
     type: 'crypto',
     symbol: '&#x20BF;',
   },
-  cad: {
+  {
     name: 'Canada Dollar',
+    symbol: 'cad',
     type: 'fiat',
     symbol: '&#x0024;',
   },
-  cfi: {
+  {
     name: 'Cofound.it',
+    symbol: 'cfi',
     type: 'crypto',
     url: '',
     trading: false,
   },
-  cny: {
+  {
     name: 'bitCNY',
+    symbol: 'cny',
     type: 'crypto',
     url: '',
   },
-  crb: {
+  {
     name: 'Creditbit',
+    symbol: 'crb',
     type: 'crypto',
     url: '',
   },
-  cvc: {
+  {
     name: 'Civic',
+    symbol: 'cvc',
     type: 'crypto',
     url: '',
   },
-  dash: {
+  {
     name: 'Dash',
+    symbol: 'dash',
     type: 'crypto',
     url: '',
   },
-  etc: {
+  {
     name: 'Ethereum Class',
+    symbol: 'etc',
     type: 'crypto',
     url: '',
   },
-  eur: {
+  {
     name: 'Euro',
+    symbol: 'eur',
     type: 'fiat',
     symbol: '&#x20AC;',
   },
-  gbp: {
+  {
     name: 'United Kingdom Pound',
+    symbol: 'gbp',
     type: 'fiat',
     symbol: '&#x20A4;',
   },
-  gno: {
+  {
     name: 'Gnosis',
+    symbol: 'gno',
     type: 'crypto',
     url: '',
   },
-  gnt: {
+  {
     name: 'Golem',
+    symbol: 'gnt',
     type: 'crypto',
     url: '',
   },
-  gup: {
+  {
     name: 'Matchpool',
+    symbol: 'gup',
     type: 'crypto',
     url: '',
   },
-  hkd: {
+  {
     name: 'Hong Kong Dollar',
+    symbol: 'hkd',
     type: 'fiat',
     symbol: '&#x0024;',
   },
-  hmq: {
+  {
     name: 'Humaniq',
+    symbol: 'hmq',
     type: 'crypto',
     url: '',
   },
-  idr: {
+  {
     name: 'Indonesia Rupiah',
+    symbol: 'idr',
     type: 'fiat',
     symbol: 'Rp',
   },
-  jpy: {
+  {
     name: 'Japan Yen',
+    symbol: 'jpy',
     type: 'fiat',
     symbol: '&#x00A5;',
   },
-  krw: {
+  {
     name: 'South Korea Won',
+    symbol: 'krw',
     type: 'fiat',
     symbol: '&#x20A9;',
   },
-  lgd: {
+  {
     name: 'Legends Room',
+    symbol: 'lgd',
     type: 'crypto',
     url: '',
     trading: false,
   },
-  lsk: {
+  {
     name: 'Lisk',
+    symbol: 'lsk',
     type: 'crypto',
     url: '',
   },
-  ltc: {
+  {
     name: 'Litecoin',
+    symbol: 'ltc',
     type: 'crypto',
     url: '',
   },
-  lun: {
+  {
     name: 'Lunyr',
+    symbol: 'lun',
     type: 'crypto',
     url: '',
   },
-  mco: {
+  {
     name: 'Monaco',
+    symbol: 'mco',
     type: 'crypto',
     url: '',
   },
-  nmr: {
+  {
     name: 'Numeraire',
+    symbol: 'nmr',
     type: 'crypto',
     url: '',
   },
-  omg: {
+  {
     name: 'OmiseGO',
+    symbol: 'omg',
     type: 'crypto',
     url: '',
   },
-  pay: {
+  {
     name: 'TenX',
+    symbol: 'pay',
     type: 'crypto',
     url: '',
   },
-  php: {
+  {
     name: 'Philippines Peso',
+    symbol: 'php',
     type: 'fiat',
     symbol: '&#x20B1;',
   },
-  ptoy: {
+  {
     name: 'Patientory',
+    symbol: 'ptoy',
     type: 'crypto',
     url: '',
   },
-  qrl: {
+  {
     name: 'Quantum Resistant Ledger',
+    symbol: 'qrl',
     type: 'crypto',
     url: '',
   },
-  qtum: {
+  {
     name: 'Qtum',
+    symbol: 'qtum',
     type: 'crypto',
     url: '',
   },
-  rep: {
+  {
     name: 'Augur',
+    symbol: 'rep',
     type: 'crypto',
     url: '',
   },
-  rlc: {
+  {
     name: 'iExec',
+    symbol: 'rlc',
     type: 'crypto',
     url: '',
   },
-  rub: {
+  {
     name: 'Russia Ruble',
+    symbol: 'rub',
     type: 'fiat',
     symbol: '&#x20BD;',
   },
-  sc: {
-    name: '',
-    type: 'crypto',
-    url: '',
-  },
-  sgd: {
+  {
     name: 'Siacoin',
+    symbol: 'sgd',
     type: 'crypto',
     url: '',
   },
-  snt: {
+  {
     name: 'Status',
+    symbol: 'snt',
     type: 'crypto',
     url: '',
   },
-  steem: {
+  {
     name: 'Steem',
+    symbol: 'steem',
     type: 'crypto',
     url: '',
   },
-  storj: {
+  {
     name: 'Storj',
+    symbol: 'storj',
     type: 'crypto',
     url: '',
   },
-  trst: {
+  {
     name: 'WeTrust',
+    symbol: 'trst',
     type: 'crypto',
     url: '',
   },
-  uah: {
+  {
     name: 'UAHPay',
+    symbol: 'uah',
     type: 'crypto',
     url: '',
   },
-  usd: {
+  {
     name: 'United States Dollar',
+    symbol: 'usd',
     type: 'fiat',
     symbol: '&#x0024;',
   },
-  wings: {
+  {
     name: 'Wings',
+    symbol: 'wings',
     type: 'crypto',
     url: '',
   },
-  xem: {
+  {
     name: 'NEM',
+    symbol: 'xem',
     type: 'crypto',
     url: '',
   },
-  xlm: {
+  {
     name: 'Stellar Lumens',
+    symbol: 'xlm',
     type: 'crypto',
     url: '',
   },
-  xmr: {
+  {
     name: 'Monero',
+    symbol: 'xmr',
     type: 'crypto',
     url: '',
   },
-  xrp: {
+  {
     name: 'Ripple',
+    symbol: 'xrp',
     type: 'crypto',
     url: '',
   },
-  zec: {
+  {
     name: 'Zcash',
+    symbol: 'zec',
     type: 'crypto',
     url: '',
   },
-};
+];
+
+export default Currencies;

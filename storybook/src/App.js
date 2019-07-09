@@ -1,12 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ConnectionBanner from '@rimble/connection-banner';
+import EthConverter from '@rimble/eth-converter';
 
 function App() {
   return (
     <div className="App">
-      <ConnectionBanner currentNetwork={4} requiredNetwork={3} />
+      <EthConverter ethAmount={1} convertTo={'usd'} />
     </div>
   );
 }

@@ -19,6 +19,7 @@ class EthConverter extends React.Component {
     loading: true,
     conversion: [],
     lastUpdate: '',
+    results: null,
   };
 
   log = symbol => {
@@ -75,6 +76,9 @@ class EthConverter extends React.Component {
   };
 
   updateTimeAgo = () => {
+    if (this.state.results === null) {
+      return;
+    }
     console.log('timestamp', this.state.results.timestamp);
     const now = Date.now();
 
@@ -123,8 +127,9 @@ class EthConverter extends React.Component {
   onInputChange = e => {
     e.preventDefault();
     console.log('baseValue', e.target.value);
-    this.updateConvertedValue();
-    this.setState({ baseValue: e.target.value });
+    this.setState({ baseValue: e.target.value }, () => {
+      this.updateConvertedValue();
+    });
   };
 
   populateDropdown = async () => {
@@ -145,6 +150,12 @@ class EthConverter extends React.Component {
     this.setState({ conversions: values, loading: false }, () => {
       // this.buildCurrencyList();
     });
+
+    this.interval = setInterval(() => this.updateTimeAgo(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {

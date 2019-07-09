@@ -66,6 +66,9 @@ class EthConverter extends React.Component {
   };
 
   updateConvertedValue = () => {
+    if (this.state.results === null) {
+      return false;
+    }
     const convertedValue = this.state.baseValue * this.state.results.bid;
     this.setState({ convertedValue });
     return convertedValue;
@@ -120,6 +123,7 @@ class EthConverter extends React.Component {
   onInputChange = e => {
     e.preventDefault();
     console.log('baseValue', e.target.value);
+    this.updateConvertedValue();
     this.setState({ baseValue: e.target.value });
   };
 

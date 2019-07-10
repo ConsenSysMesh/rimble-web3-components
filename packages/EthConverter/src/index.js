@@ -20,14 +20,22 @@ class EthConverter extends React.Component {
     conversion: [],
     lastUpdate: '',
     results: null,
+    symbols: null,
+    currencyCode: null,
+    currencyDetails: null,
   };
 
-  log = symbol => {
-    console.log('Symbol', symbol);
-  };
+  getTicker = async () => {
+    if (this.state.currencyCode === null) {
+      console.log('No currencyCode to update');
+      return;
+    }
 
-  getTicker = async symbol => {
-    const url = 'https://api.infura.io/v1/ticker/' + symbol;
+    const infuraConversion = 'eth' + this.state.currencyCode;
+
+    console.log('Fetching results for ' + infuraConversion);
+
+    const url = 'https://api.infura.io/v1/ticker/' + infuraConversion;
     try {
       const results = await fetch(url)
         .then(response => {
@@ -35,10 +43,11 @@ class EthConverter extends React.Component {
         })
         .then(results => {
           console.log(JSON.stringify(results));
-          this.setState({ results: results });
-          this.updateTimeAgo(results.timestamp);
-          this.updateConvertedValue();
-          this.getCurrencyDetails(results.quote);
+          this.setState({ results: results }, () => {
+            this.updateTimeAgo(results.timestamp);
+            this.updateConvertedValue();
+            this.getCurrencyDetails();
+          });
           return results;
         });
       return results;
@@ -47,23 +56,24 @@ class EthConverter extends React.Component {
     }
   };
 
-  buildCurrencyList = () => {
-    let currencyList = [];
+  buildCurrencyTypeList = () => {
+    const currencyTypes = [...new Set(Currencies.map(item => item.type))];
 
-    currencyList = this.state.conversions.map(currency => {
-      console.log(currency);
-      return currency;
-    });
-
-    return currencyList;
+    console.log(currencyTypes);
+    this.setState({ currencyTypes });
   };
 
-  getCurrencyDetails = currencyCode => {
-    currencyCode = Currencies.filter(currency => {
-      console.log(currency);
-    });
+  getCurrencyDetails = () => {
+    if (this.state.results === null) {
+      return;
+    }
+    const currencyDetails = Currencies.filter(
+      currency => currency.code === this.state.results.quote.toLowerCase(),
+    );
+    console.log(currencyDetails[0]);
+    this.setState({ currencyDetails: currencyDetails[0] });
 
-    return currencyCode;
+    return currencyDetails[0];
   };
 
   updateConvertedValue = () => {
@@ -79,10 +89,7 @@ class EthConverter extends React.Component {
     if (this.state.results === null) {
       return;
     }
-    console.log('timestamp', this.state.results.timestamp);
     const now = Date.now();
-
-    console.log('now', now);
 
     let diff = now / 1000 - this.state.results.timestamp;
     diff = Math.abs(Math.floor(diff));
@@ -98,16 +105,14 @@ class EthConverter extends React.Component {
 
     const timeAgoString =
       'Last updated ' +
-      days +
-      ' days ' +
-      hrs +
-      ' hours ' +
-      min +
-      ' minutes and ' +
+      // days +
+      // ' days ' +
+      // hrs +
+      // ' hours ' +
+      // min +
+      // ' minutes and ' +
       leftSec +
       ' seconds ago';
-
-    console.log('timeAgoString', timeAgoString);
 
     this.setState({
       lastUpdated: timeAgoString,
@@ -116,12 +121,30 @@ class EthConverter extends React.Component {
     return timeAgoString;
   };
 
-  onDropdownSelected = e => {
+  onCurrencyTypeSelected = e => {
+    e.preventDefault();
+    // find currencies that match and create new array of only name and code
+    // Need to wait for rimble-ui version that supports this - 0.9.5
+    // const currencyDropdown = Currencies.filter(currency => currency.type === e.target.value).map(currency => ({label: currency.name, value: currency.code}));
+    const currencyDropdown = [
+      ...new Set(
+        Currencies.filter(currency => currency.type === e.target.value).map(
+          currency => currency.code,
+        ),
+      ),
+    ];
+    console.log('currencyDropdown', currencyDropdown);
+    this.setState({ currencyDropdown, results: null, currencyCode: null });
+  };
+
+  onCurrencySelected = e => {
     e.preventDefault();
 
-    const symbol = e.target.value;
-    console.log('THE VAL', symbol);
-    this.getTicker(symbol);
+    const currencyCode = e.target.value;
+    console.log('Currency code: ', currencyCode);
+    this.setState({ currencyCode }, () => {
+      this.getTicker();
+    });
   };
 
   onInputChange = e => {
@@ -147,15 +170,18 @@ class EthConverter extends React.Component {
   async componentDidMount() {
     const values = await this.populateDropdown();
     console.log('values', values);
-    this.setState({ conversions: values, loading: false }, () => {
-      // this.buildCurrencyList();
+    this.setState({ conversions: values }, () => {
+      this.buildCurrencyTypeList();
+      this.setState({ loading: false });
     });
 
     this.interval = setInterval(() => this.updateTimeAgo(), 1000);
+    this.tickerInterval = setInterval(() => this.getTicker(), 60000);
   }
 
   componentWillUnmount() {
     clearInterval(this.interval);
+    clearInterval(this.tickerInterval);
   }
 
   render() {
@@ -172,20 +198,38 @@ class EthConverter extends React.Component {
                 onChange={this.onInputChange}
               />
             </Field>
-            <Field label={'Choose currency'} mr={4}>
+            <Field label={'Currency Type'} mr={4}>
               <Select
-                name="country"
-                onChange={this.onDropdownSelected}
-                value={this.state.convert}
-                items={this.state.conversions}
+                name="type"
+                onChange={this.onCurrencyTypeSelected}
+                value={this.state.currentCurrencyType}
+                items={this.state.currencyTypes}
                 required
               />
             </Field>
-            <Field label={'Converted value'} mr={2}>
-              <Input type="number" value={this.state.convertedValue} required />
-            </Field>
+            {this.state.currencyDropdown && (
+              <Field label={'Currency'} mr={4}>
+                <Select
+                  name="symbol"
+                  onChange={this.onCurrencySelected}
+                  value={this.state.convert}
+                  items={this.state.currencyDropdown}
+                  required
+                />
+              </Field>
+            )}
+
             {this.state.results && (
-              <Heading.h3 pt={2}>{this.state.results.quote}</Heading.h3>
+              <Heading.h3 pt={2}>
+                {this.state.currencyDetails && (
+                  <Text.span>
+                    {String.fromCharCode(
+                      this.state.currencyDetails.unicodeDecimal,
+                    )}
+                  </Text.span>
+                )}{' '}
+                {this.state.convertedValue} {this.state.results.quote}
+              </Heading.h3>
             )}
           </Flex>
         ) : (
@@ -208,11 +252,29 @@ class EthConverter extends React.Component {
             </Flex>
             <Flex>
               <Text width={'100px'}>Bid:</Text>{' '}
-              <Text>{this.state.results.bid}</Text>
+              <Text>
+                {this.state.currencyDetails && (
+                  <Text.span>
+                    {String.fromCharCode(
+                      this.state.currencyDetails.unicodeDecimal,
+                    )}
+                  </Text.span>
+                )}
+                {this.state.results.bid}
+              </Text>
             </Flex>
             <Flex>
               <Text width={'100px'}>Ask:</Text>{' '}
-              <Text>{this.state.results.ask}</Text>
+              <Text>
+                {this.state.currencyDetails && (
+                  <Text.span>
+                    {String.fromCharCode(
+                      this.state.currencyDetails.unicodeDecimal,
+                    )}
+                  </Text.span>
+                )}
+                {this.state.results.ask}
+              </Text>
             </Flex>
             <Flex>
               <Text width={'100px'}>Exchange:</Text>{' '}

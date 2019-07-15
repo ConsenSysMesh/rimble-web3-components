@@ -145,7 +145,7 @@ class EthConverter extends React.Component {
   }
 }
 
-EthConverter.PropTypes = {
+EthConverter.propTypes = {
   currency: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
   noCurrencyCode: PropTypes.bool,

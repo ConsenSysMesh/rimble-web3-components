@@ -35,6 +35,12 @@
     "styled-components": ">= 4"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "babel-jest": "^24.8.0",
+    "babel-polyfill": "^6.26.0",
+    "jest-fetch-mock": "^2.1.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -49,5 +55,11 @@
     "test": "./task.sh test",
     "lint": "./task.sh lint"
   },
-  "browser": true
+  "browser": true,
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./test/setupJest.js"
+    ]
+  }
 }

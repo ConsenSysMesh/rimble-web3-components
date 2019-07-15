@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Box, Tooltip } from 'rimble-ui';
+
 import Currencies from './CurrencyMap';
 
 class EthConverter extends React.Component {
   state = {
     loading: true,
-    conversion: [],
-    lastUpdate: '',
     results: null,
     symbols: null,
     currencyCode: null,
@@ -59,7 +60,9 @@ class EthConverter extends React.Component {
     if (this.state.results === null) {
       return false;
     }
-    const convertedValue = this.props.value * this.state.results.bid;
+    const convertedValue = (this.props.value * this.state.results.bid).toFixed(
+      2,
+    );
     this.setState({ convertedValue });
     return convertedValue;
   };
@@ -82,16 +85,7 @@ class EthConverter extends React.Component {
     const min = Math.floor(leftSec / 60);
     leftSec = leftSec - min * 60;
 
-    const timeAgoString =
-      'Last updated ' +
-      // days +
-      // ' days ' +
-      // hrs +
-      // ' hours ' +
-      // min +
-      // ' minutes and ' +
-      leftSec +
-      ' seconds ago';
+    const timeAgoString = 'Last updated ' + leftSec + ' seconds ago';
 
     this.setState({
       lastUpdated: timeAgoString,
@@ -118,14 +112,13 @@ class EthConverter extends React.Component {
       console.log('Fetching new currency', this.props.currency);
       this.getTicker();
     } else if (prevProps.value !== this.props.value) {
-      console.log('Calculating new value', this.props.value);
       this.updateConvertedValue();
     }
   }
 
   render() {
     return (
-      <Box>
+      <Box {...this.props}>
         {this.state.loading === false
           ? this.state.results && (
               <Tooltip
@@ -135,14 +128,15 @@ class EthConverter extends React.Component {
                   this.state.results.exchange
                 }
               >
-                {this.state.currencyDetails && (
+                {this.state.currencyDetails && !this.props.noCurrencySymbol && (
                   <>
                     {String.fromCharCode(
                       this.state.currencyDetails.unicodeDecimal,
                     )}
                   </>
-                )}{' '}
-                {this.state.convertedValue} {this.state.results.quote}
+                )}
+                {this.state.convertedValue}
+                {!this.props.noCurrencyCode && <> {this.state.results.quote}</>}
               </Tooltip>
             )
           : 'Loading...'}
@@ -150,5 +144,12 @@ class EthConverter extends React.Component {
     );
   }
 }
+
+EthConverter.PropTypes = {
+  currency: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  noCurrencyCode: PropTypes.bool,
+  noCurrencySymbol: PropTypes.bool,
+};
 
 export default EthConverter;

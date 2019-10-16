@@ -71,7 +71,13 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
               </Flex>
             </Flex>
 
-            <MetaMaskButton as="a" href="https://metamask.io/" target="_blank">
+
+            <MetaMaskButton
+              as="a"
+              href="https://metamask.io/"
+              target="_blank"
+              color={'white'}
+            >
               Install MetaMask
             </MetaMaskButton>
           </Flex>

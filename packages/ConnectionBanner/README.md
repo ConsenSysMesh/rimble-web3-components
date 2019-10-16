@@ -113,7 +113,7 @@ import ConnectionBanner from '@rimble/connection-banner';
 
 ## Documentation
 
-[Documentation](https://consensys.github.io/rimble-ui/)
+[Documentation](https://rimble.consensys.design/components/web3-components/ConnectionBanner)
 
 ### Issues
 

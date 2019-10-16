@@ -36,7 +36,7 @@ const isMobile = RimbleUtils.isMobileDevice(); // returns true or false boolean
 
 ## Documentation
 
-[Documentation](https://consensys.github.io/rimble-ui/)
+[Documentation](https://rimble.consensys.design/components/web3-components/NetworkIndicator)
 
 ### Issues
 

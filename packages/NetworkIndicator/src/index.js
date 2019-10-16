@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RimbleUtils from '@rimble/utils';
 import { Flex, Text, Icon, Tooltip, Box } from 'rimble-ui';
-import { ThemeProvider } from 'rimble-ui';
 
 const RightNetwork = ({ currentNetwork, onNetworkMessage }) => {
   const tooltipMessage =

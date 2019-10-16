@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RimbleUtils from '@rimble/utils';
-import { Box, Flex, Icon, Text, MetaMaskButton, Link, Flash } from 'rimble-ui';
+import { Box, Flex, Icon, Text, MetaMaskButton, Flash } from 'rimble-ui';
 
 const WrongNetwork = ({
   currentNetwork,
@@ -59,7 +59,7 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
       {noNetworkAvailableMessage === null ? (
         <Flash variant={'danger'}>
           <Flex alignItems="center" justifyContent="space-between">
-            <Flex alignItems="center">
+            <Flex alignItems="center" pr={'2'}>
               <Box pr={3}>
                 <Icon name="Warning" size="44" />
               </Box>
@@ -70,6 +70,7 @@ const NoNetwork = ({ noNetworkAvailableMessage }) => {
                 </Text>
               </Flex>
             </Flex>
+
 
             <MetaMaskButton
               as="a"
@@ -177,18 +178,18 @@ class ConnectionBanner extends Component {
 
     return (
       <div>
-        {this.state.isCorrectNetwork === false ? (
-          <WrongNetwork
-            currentNetwork={currentNetwork}
-            requiredNetwork={requiredNetwork}
-            onWrongNetworkMessage={onWrongNetworkMessage}
-          />
-        ) : this.state.browserIsWeb3Capable === false ? (
+        {this.state.browserIsWeb3Capable === false ? (
           <NotWeb3Browser
             notWeb3CapableBrowserMessage={notWeb3CapableBrowserMessage}
           />
         ) : onWeb3Fallback === true || currentNetwork === null ? (
           <NoNetwork noNetworkAvailableMessage={noNetworkAvailableMessage} />
+        ) : this.state.isCorrectNetwork === false ? (
+          <WrongNetwork
+            currentNetwork={currentNetwork}
+            requiredNetwork={requiredNetwork}
+            onWrongNetworkMessage={onWrongNetworkMessage}
+          />
         ) : null}
       </div>
     );

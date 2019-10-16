@@ -1,6 +1,6 @@
 {
   "name": "@rimble/connection-banner",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "license": "MIT",
   "description": "Web3 React component built with Rimble UI that will display an informative banner when the user is not in a web3 capable browser, or when the current browser does not have a wallet available, or when the current ethereum network does not match the required network.",
   "keywords": [
@@ -22,21 +22,21 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@rimble/utils": "^1.1.1",
-    "rimble-ui": "^0.8.0"
+    "@rimble/utils": "^1.2.1",
+    "rimble-ui": "^0.9.1"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0",
-    "rimble-ui": "^0.8.0",
+    "rimble-ui": "^0.9.1",
     "styled-components": ">= 4"
   },
   "devDependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "rimble-ui": "^0.7.0",
+    "rimble-ui": "^0.9.1",
     "styled-components": ">= 4"
   },
   "files": [

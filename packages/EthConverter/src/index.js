@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { Box, Tooltip } from 'rimble-ui';
-
 import Currencies from './CurrencyMap';
 
-class EthConverter extends React.Component {
+class EthConverter extends Component {
+  static propTypes = {
+    currency: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    noCurrencyCode: PropTypes.bool,
+    noCurrencySymbol: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    currency: null,
+    value: null,
+  };
+
   state = {
     loading: true,
     results: null,
@@ -28,9 +38,8 @@ class EthConverter extends React.Component {
         .then(response => {
           return response.json();
         })
-        .then(results => {
-          // console.log(JSON.stringify(results));
-          this.setState({ results: results, loading: false }, () => {
+        .then(response => {
+          this.setState({ results: response, loading: false }, () => {
             this.updateTimeAgo(results.timestamp);
             this.updateConvertedValue();
             this.getCurrencyDetails();
@@ -144,12 +153,5 @@ class EthConverter extends React.Component {
     );
   }
 }
-
-EthConverter.propTypes = {
-  currency: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-  noCurrencyCode: PropTypes.bool,
-  noCurrencySymbol: PropTypes.bool,
-};
 
 export default EthConverter;

@@ -5,7 +5,7 @@
   "dependencies": {
     "@rimble/connection-banner": "*",
     "@rimble/network-indicator": "*",
-    "@rimble/utils": "*",
+    "@rimble/eth-converter": "*",
     "react": "^16.8.6",
     "react-app": "^1.1.2",
     "react-dom": "^16.8.6",

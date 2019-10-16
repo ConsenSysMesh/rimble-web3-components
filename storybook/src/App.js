@@ -1,10 +1,11 @@
 import React from 'react';
-import EthConverter from '@rimble/eth-converter';
+import ConnectionBanner from '@rimble/connection-banner';
 
 function App() {
   return (
     <div className="App">
-      <EthConverter ethAmount={1} convertTo={'usd'} />
+      {/* <EthConverter value={1} currency={'usd'} /> */}
+      <ConnectionBanner currentNetwork={1} requiredNetwork={3} />
     </div>
   );
 }

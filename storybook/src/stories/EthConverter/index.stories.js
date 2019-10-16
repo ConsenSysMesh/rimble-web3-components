@@ -6,11 +6,11 @@ import { withKnobs, object } from '@storybook/addon-knobs';
 storiesOf('EthConverter', module)
   .addDecorator(withKnobs) // enable knobs
   .add('usd', () => {
-    const props = object('props', { ethValue: 1, convertTo: 'usd' });
+    const props = object('props', { value: 1, currency: 'usd' });
 
     return (
       <div>
-        <EthConverter ethValue={props.ethValue} convertTo={props.convertTo} />
+        <EthConverter value={props.value} currency={props.currency} />
       </div>
     );
   });
